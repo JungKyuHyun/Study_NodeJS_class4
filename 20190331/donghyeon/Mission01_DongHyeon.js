@@ -15,15 +15,17 @@ console.log(Users.length);
 
 for(var i =0; i<2; i++){
 	console.log('이름'+ i+'번'+': %s', Users[i].name);
-}
-
- fs.writeFile('./output.txt', '이름 : ' + Users[i].name+
+    
+    fs.writeFile('./output.txt', '이름 : ' + Users[i].name+
                                     ' 나이 : ' + Users[i].age+
                                     ' 전화번호 : ' + Users[i].number + '\r\n', function(err) {
     if(err) {
         console.log('Error' + err);
     }
-});
+    });
+    
+}
+
 
 
 
