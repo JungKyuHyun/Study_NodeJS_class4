@@ -7,11 +7,12 @@ function open(){
     var inname = "./read.txt";
     fs.open("./read.txt", "a+", function(err, fd){
         if(err) throw err;
-    
+        console.log("fd : " + fd.toString());
         var contents = new Array();
         for(var i=0; i<5; i++){
             contents.push(("정규현"+ " " + (i+20) + " " + "010-3768-920"+i).toString());
         }
+        console.log(contents);
         var buf = new Buffer.from(contents[0]+"\n");
         fs.write(fd, buf, 0, buf.length, null, function(err, written, buffer){
             if(err) throw err;
