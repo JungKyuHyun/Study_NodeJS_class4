@@ -60,10 +60,33 @@
     .searchBox {
     font: bold 16px 맑은 고딕,dotum,arial,sans-serif;
     line-height: 34px;
-    
-    height: 30px !important;
-}
+    height: 50px !important;
+    padding : 15px 15px 15px 15px ;
+    border-right-style: none;
+    border-color :darkgray;
+    border-radius: 10px 0px 0px 10px;
+    border-style : solid;
+    outline : none; 
+  }
+  #searchBtn{
+    font: bold 10px 맑은 고딕,dotum,arial,sans-serif;
+    border-radius : 0px 10px 10px 0px;
+    color:black;
+    background-color : #eeeeee;
+    height: 50px !important;
+    border-style:solid;
+    margin:0px !important;
+    padding : 9px 24px 15px 15px ;
+    line-height: 34px;
+    border-color:darkgray;
 
+  }
+  input::placeholder { 
+    color: #dddddd;
+    
+    font-size: 1.0em;
+    text-align : left;
+  }
     </style>
   </head>
   <body>
@@ -73,7 +96,10 @@
     
     <div class="content">
       
-      <input id="textBox" class="searchBox" type="text" value="">
+      <input id="textBox" class="searchBox" type="text" value="" 
+             placeholder=" Member Name" 
+             onmouseover="changeColor(this)" 
+             onmouseout="changeColor2(this)"> 
       <input id="searchBtn" type = "submit"  value="검색"> 
     </div>
     <script>
@@ -81,6 +107,13 @@
       var searchBtn = document.querySelector('#searchBtn');
       var textBox = document.querySelector('#textBox');
 
+      function changeColor(obj){
+        obj.style.backgroundColor = "#f3f3f3";
+        obj.style.bordercolor = "white";
+      }
+      function changeColor2(obj){
+        obj.style.backgroundColor = "white";
+      }
       var findTeam = function (){
         if (team4.indexOf(textBox.value) == 0) {
           location.href = 'http://www.naver.com';
