@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>전체 화면 LayOut</title>
+    <style type="text/css">
+        .ctr-p{
+            margin:0 auto;min-width:980px
+              }
+              #viewport{
+                background-image: url("images/back.png");
+                background-repeat:no-repeat;
+                background-size:cover;
+            	    min-heigth:100%;position:relative;width:100%
+              }
+      section:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #f1f1f1;
+        height: 300px; /* only for demonstration, should be removed */
+      }
+        #container{width: 960px;margin:0 auto;padding:10px}
+        #header1{background-image: url("images/top.png");
+                background-repeat:no-repeat;
+                background-size:height 143px;
+
+                width :100%;height: 143px;}
+
+        #content{width: 70%;height: 700px;float: right;}
+        #nav{
+            overflow:scroll;
+            width: 25%;height: 700px;float:left
+            }
+        #footer{background-image: url("images/footer.png");
+                background-repeat:no-repeat;
+                background-size:height 143px;
+                height: 30px;clear: both}
+        #indeximage{
+            border: 4px solid #ddd;
+            border-radius: 4px;
+            padding: 1px;
+            width: 89%;
+            height: 14%;
+        }
+        #navimage{
+            border: 0px;
+            border-radius: 4px;
+            padding: 1px;
+            width: 100%;
+            height: 4%;
+            
+        }
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+        p{
+            font-size:12px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="ctr-p" id="viewport">
+      <div id="header1"></div>
+
+      <div id="content">content</div>
+      <div id="nav">
+            <img id="navimage" src="images/navtop.png" >
+          <p>1. <img id="indeximage" src="images/1.png" ></p>
+          <p>2. <img id="indeximage" src="images/1.png" ></p>
+          <p>3. <img id="indeximage" src="images/1.png" ></p>
+          <p>4. <img id="indeximage" src="images/1.png" ></p>
+          <p>5. <img id="indeximage" src="images/1.png" ></p>
+
+            
+        </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>
