@@ -42,6 +42,9 @@
           font-weight: bold;
           padding :0px 50px 0px 50px;
       }
+      .content {
+        text-align: center;
+      }
     a:link{
         color:black;
         text-decoration: none;
@@ -54,23 +57,58 @@
         color:gray;
         text-decoration: none;
       }
+    .searchBox {
+    font: bold 16px 맑은 고딕,dotum,arial,sans-serif;
+    line-height: 34px;
+    
+    height: 30px !important;
+}
+
     </style>
   </head>
   <body>
     <div class="header">
         <a href="./report.html"><p><h1>BIT CAMP <h2>Team4</h2></h1></p></a>
     </div>
-    <div class="nav">
-    <div class = "menu"><a href="./menukim.html">김동현</a></div>
-    <div class = "menu"><a href="./menubok.html">복다빈</a></div>
-    <div class = "menu"><a href="./menujang.html">장지훈</a></div>
-    <div class = "menu"><a href="./menukwon.html">권예지</a></div>
-    <div class = "menu"><a href="./menujeong.html">정규현</a></div>
-    <div class = "menu"><a href="./menushin.html">신선하</a></div>
-    </div>
+    
     <div class="content">
-      <p>4조의 소개페이지 입니다.</p>
       
+      <input id="textBox" class="searchBox" type="text" value="">
+      <input id="searchBtn" type = "submit"  value="검색"> 
     </div>
+    <script>
+      var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하'];
+      var searchBtn = document.querySelector('#searchBtn');
+      var textBox = document.querySelector('#textBox');
+
+      var findTeam = function (){
+        if (team4.indexOf(textBox.value) == 0) {
+          location.href = 'http://www.naver.com';
+        }else if(team4.indexOf(textBox.value) == 1){
+          location.href = 'http://www.naver.com';
+        }else if(team4.indexOf(textBox.value) == 2){
+          location.href = 'http://www.naver.com';
+        }else if(team4.indexOf(textBox.value) == 3){
+          location.href = 'http://www.naver.com';
+        }else if(team4.indexOf(textBox.value) == 4){
+          location.href = 'http://www.naver.com';
+        }else if(team4.indexOf(textBox.value) == 5){
+          location.href = 'http://www.naver.com';
+        }else if(team4.indexOf(textBox.value) == 6){
+          location.href = 'http://www.naver.com';
+        }else{
+          alert('4조원의 이름이 아닙니다.');
+          textBox.value = ''; 
+        }
+      }
+
+      searchBtn.addEventListener('click', findTeam);
+      textBox.addEventListener('keyup', function(e) {
+        if (e.keyCode === 13) {
+          findTeam();
+        }
+      })
+
+    </script>
   </body>
 </html>
