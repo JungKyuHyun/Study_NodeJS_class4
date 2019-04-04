@@ -1,33 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<div class="h-div"></div>
+<!-- <img src="img/black_bg.jpg" id="bg" alt=""> -->
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script type="text/javascript" src="./js/color.js"></script>
+    
+    <!--전체 배경설정-->
+    
 
-    <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
+    <title>Self-Introduction</title>
+    <link rel="stylesheet" type="text/css" href="./semantic/semantic.css">
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <script src="semantic/semantic.js"></script>
-    <style>
-        body {padding : 1rem;}
-    </style>
-</head>
-<body>
-    <h1>자기 소개</h1>
-    <div class="ui one item menu">
-    <a class="active item">정규현</a>
-    <!--<a class="item">김동현</a>
-    <a class="item">신선하</a>
-    <a class="item">정규현</a>
-    <a class="item">복다빈</a>
-    <a class="item">박지훈</a>
-    <a class="item">권예지</a>-->
+    <script src="./semantic/semantic.js"></script>
+    <link type="text/css" rel="stylesheet" href="./css/common.css">
 
+</head>
+
+<body>
+    
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+    <!-- 제목시작 -->
+    <a href="index.html">
+        <h1 class="align-center">A shining developer' 
+            <span class="text-upper">Jung Kyu Hyun</span>
+        </h1>
+    </a>
+        <!-- 제목 끝 -->
+
+    <!-- 상단 메뉴 시작 -->
+    <div id="main_menu" class="ui inverted segment">
+        <div class="ui four item inverted secondary pointing menu">
+            <a class="item" href="./about.html">About me</a>
+            <a class="item">Experience</a>
+            <a class="item">Skills</a>
+            <a class="item active">Interests</a>
+            </div>
+        </div>
     </div>
+    <!-- 상단 메뉴 끝 -->
+    
+    <!--about me 시작-->
+    <div class="about_me1">
+            <h2 class="sub_title">Jung Kyu Hyun</h2>
+            <img class="ui small circular image" src="./img/profile.jpg">
+    </div>
+
+        <h3 class="ui top inverted attached header">인사말</h3>
+            <div id="q0" class="ui secondary attached segment">
+                <p>반갑습니다. 28살 신입 개발자 정규현입니다.<br>
+                소통을 바탕으로 좋은 정보와 새로운 기술을 많이 공유했으면 좋겠습니다.</p>
+            </div>
+            <br>
+            <h3 class="ui inverted attached header">이름</h3>
+            <div id="q1" class="ui secondary attached segment">
+                <p>정규현</p>
+            </div>
+            <br>
+            <h3 class="ui inverted attached header">거주지</h3>
+            <div id="q2" class="ui secondary attached segment">
+                <p>대한민국 서울특별시 관악구 신림동</p>
+            </div>
+            <br>
+            <h3 class="ui inverted attached header">휴대폰 번호</h3>
+            <div id="q3" class="ui secondary attached segment">
+            <p>010-3768-9208</p>
+            </div>
+            <br>
+            <h3 class="ui inverted attached header">이메일</h3>
+            <div id="q4" class="ui secondary attached segment">
+            <p>ajdkfl6445@gmail.com</p>
+            </div>
+            <br>
+       
+
+        <table class="ui black table">
+            <thead>
+              <tr><th>Food</th>
+              <th>Calories</th>
+              <th>Protein</th>
+            </tr></thead><tbody>
+              <tr>
+                <td>Apples</td>
+                <td>200</td>
+                <td>0g</td>
+              </tr>
+              <tr>
+                <td>Orange</td>
+                <td>310</td>
+                <td>0g</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ui divider"></div>
 
     <button class="ui button">Follow</button>
 
