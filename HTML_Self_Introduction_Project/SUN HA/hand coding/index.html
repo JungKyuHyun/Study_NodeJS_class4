@@ -3,6 +3,31 @@
 <head>
 <title>Self-Introduction HandCoding</title>
 
+<script type="text/javascript" src=" http://maps.google.com/maps/api/js?v=3.3&sensor=true"></script>
+  <script type="text/javascript"> 
+  function initialize() {
+   var myLatlng = new google.maps.LatLng(37.500108, 127.029383); //<- 위도와 경도
+   var myOptions = {
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+   }
+   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+   var marker = new google.maps.Marker( {
+    position: myLatlng, 
+    map: map, 
+    title:"비트캠프 강남"
+   });   
+   var infowindow = new google.maps.InfoWindow( {
+    content: "비트캠프 강남" 
+   });
+   infowindow.open(map,marker);
+  }
+  window.onload=function() {
+   initialize();
+  }
+  </script>
+
 <style type="text/css">
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -87,10 +112,13 @@ article {
 }
 
 div.gallery {
-  margin: 5px;
+  
+  margin: 30px;
+  margin-top: 0;
+  margin-left: 5px;
   border: 1px solid #ccc;
   float: left;
-  width: 220px;
+  width: 250px;
 }
 
 div.gallery:hover {
@@ -119,12 +147,12 @@ footer {
   text-align: center;
   color: white;
 }
-
 </style>
+
 </head>
-<body>
+<body>  
       <header id="sub_header">          
-            <div id="logo"></div>             
+            <div id="logo"></div>                      
               <h1>
                 <a href="index.html"><img id="#" src="images/sakura.png" width="100" height="100"></a>
                 SHIN SUN HA
@@ -161,25 +189,25 @@ footer {
     </article><br>
     
     <article>     
-    <h1>Interests</h1><div class="gallery">
-        <a target="_blank" href="images/me.jpg">
-          <img src="images/me.jpg" alt="Cinque Terre" width="600" height="400">
+    <h1>Interests</h1><div class="gallery" >
+        <a target="_blank">
+          <img src="images/travel.jpg" alt="Cinque Terre" width="600" height="400">
         </a>
-        <div class="desc">Add a description of the image here</div>
+        <div class="desc">여행</div>
       </div>
       
       <div class="gallery">
-        <a target="_blank" href="images/me.jpg">
-          <img src="images/me.jpg" alt="Cinque Terre" width="600" height="400">
+        <a target="_blank">
+          <img src="images/food.jpg" alt="Cinque Terre" width="600" height="400">
         </a>
-        <div class="desc">Add a description of the image here</div>
+        <div class="desc">맛집탐방</div>
       </div>
       
       <div class="gallery">
-        <a target="_blank" href="images/me.jpg">
-          <img src="images/me.jpg" alt="Cinque Terre" width="600" height="400">
+        <a target="_blank">
+          <img src="images/shopping.jpg" alt="Cinque Terre" width="600" height="400">
         </a>
-        <div class="desc">Add a description of the image here</div>
+        <div class="desc">쇼핑</div>
       </div>
 
  
@@ -187,13 +215,16 @@ footer {
     </article><br>
    
     <article>     
-    <h1>Contact</h1>    
-    <p>내용입력</p>
-    </article><br>
+    <h1>Contact</h1>
+      <p>Email : shin_sunha@naver.com</p>
+      <p>HP    : 010-5100-4275</p>
+      <p>HOME : 서울특별시 강남구 역삼동 819-4</p>
+      <div id="map_canvas" style="width:100%; height:180px;"></div>
+  </article><br>
 
 
 <footer>
-  <p>Footer</p>
+  <p>©All right reserved. Designed by Sun Ha Shin</p>
 </footer>
 
 </body>
