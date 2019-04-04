@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>지우개</title>
+ <style>
+ body{
+  margin:20px;
+ }
+ canvas{
+  cursor:crosshair;
+  border:solid 2px #000;
+  margin:15px 0 0 0;
+   -webkit-box-shadow:1px 1px 20px #ccc;
+   -moz-box-shadow:1px 1px 20px #ccc;
+  box-shadow:1px 1px 20px #ccc;
+ }
+ input {
+  border:1px solid #000;
+ }
+ </style>
+ <script>
+  var canvas;
+  var ctx;
+  var del = 0;
+  var flag = false;
+ 
+  var ready = function(){
+   canvas = document.getElementById("canvas");
+   ctx = canvas.getContext("2d");
+   canvas.onmousedown = drawStart;
+   canvas.onmousemove = drawing;
+   window.onmouseup = drawEnd;
+   
+   ctx.lineWidth = 10;
+   ctx.strokeStyle = '#ff0000';
+  }
+
+  var drawStart = function(event){
+   ctx.beginPath();
+   var xpos = event.target.offsetLeft;
+   var ypos = event.target.offsetTop;
+   ctx.moveTo(event.clientX-xpos, event.clientY-ypos);
+   flag = true;
+  }
+
+  var drawing = function(event){
+   if(flag) {
+   var xpos = event.target.offsetLeft;
+   var ypos = event.target.offsetTop;
+   ctx.lineCap = 'round'
+   
+   if(del==0) {
+    ctx.lineTo(event.clientX-xpos, event.clientY-ypos);
+   } else if(del==1) {
+    ctx.clearRect(event.clientX-xpos-20, event.clientY-ypos-20, 50, 50);
+   }
+   
+   ctx.stroke();
+   }
+  }
+
+  var drawEnd = function(event){
+   flag = false;
+  }
+
+  var pen = function() {
+      del = 0;
+  }
+ 
+  var eraser = function(){
+   del = 1;
+  }
+ </script>
+</head>
+
+<body onload="ready()">
+ <div>
+  <input type="button" value="펜" onclick="pen()"></input>
+  <input type="button" value="지우개" onclick="eraser()"></input>
+ </div>
+ <canvas id="canvas" width="675" height="250"></canvas>
+</body>
+</html>
