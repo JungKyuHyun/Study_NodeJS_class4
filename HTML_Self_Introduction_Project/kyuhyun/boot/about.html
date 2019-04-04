@@ -1,105 +1,75 @@
 <!DOCTYPE html>
-<div class="h-div"></div>
-<!-- <img src="img/black_bg.jpg" id="bg" alt=""> -->
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="./js/color.js"></script>
-    
-    <!--전체 배경설정-->
-    
+    <title>ABOUT</title>
+    <link type="text/css" href="./css/common.css" rel="stylesheet">
 
-    <title>About me</title>
-    <link rel="stylesheet" type="text/css" href="./semantic/semantic.css">
+    <link rel="stylesheet" type="text/css" href="./Semantic/semantic.css">
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <script src="./semantic/semantic.js"></script>
-    <link type="text/css" rel="stylesheet" href="./css/common.css">
+    
+    <script src="./Semantic/semantic.js"></script>
 
 </head>
-
+<!--그리드라인 잡기-->
 <body>
-    
-    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
-    <!-- 제목시작 -->
-    <a href="index.html">
-        <h1 class="align-center">A shining developer' 
-            <span class="text-upper">Jung Kyu Hyun</span>
-        </h1>
-    </a>
-        <!-- 제목 끝 -->
-
-    <!-- 상단 메뉴 시작 -->
-    <div id="main_menu" class="ui inverted segment">
-        <div class="ui four item inverted secondary pointing menu">
-            <a class="item" href="./about.html">About me</a>
-            <a class="item">Experience</a>
-            <a class="item">Skills</a>
-            <a class="item active">Interests</a>
-            </div>
+    <div class="grid-container">
+        <!--그리드 왼쪽 1번 메뉴 영역-->
+        <div class="left_main_scope_one" id="grid1">
+                    <a href="index.html" class="gohome">
+                        <div>HOME</div>
+                    </a>
         </div>
-    </div>
-    <!-- 상단 메뉴 끝 -->
-    
-    <!--about me 시작-->
-    <div class="about_me1">
-            <h2 class="sub_title">Jung Kyu Hyun</h2>
-            <img class="ui small circular image" src="./img/profile.jpg">
-    </div>
+        
+        <!--그리드 오른쪽 1번 메뉴 영역-->
+        <div class="right_main_scope_one" id="grid2">
+                <div class="ui bottom right attached blue Massive label">ABOUT</div>
+                <!-- <img class="profile" src="./img/profile.jpg" alt=""> -->
+                <div class="profile_img">
+                        <img class="ui small circular image" src="./img/profile.jpg">
+                </div>
+                
+                <div class="label_about">
+                        <h1><i>Jung Kyu Hyun</i></h1>
+                </div>
+            
+       
+         
+        </div>
 
-        <h3 class="ui top inverted attached header">인사말</h3>
-            <div id="q0" class="ui secondary attached segment">
-                <p>반갑습니다. 28살 신입 개발자 정규현입니다.<br>
-                소통을 바탕으로 좋은 정보와 새로운 기술을 많이 공유했으면 좋겠습니다.</p>
-            </div>
-            <br>
-            <h3 class="ui inverted attached header">이름</h3>
-            <div id="q1" class="ui secondary attached segment">
-                <p>정규현</p>
-            </div>
-            <br>
-            <h3 class="ui inverted attached header">거주지</h3>
-            <div id="q2" class="ui secondary attached segment">
-                <p>대한민국 서울특별시 관악구 신림동</p>
-            </div>
-            <br>
-            <h3 class="ui inverted attached header">휴대폰 번호</h3>
-            <div id="q3" class="ui secondary attached segment">
-            <p>010-3768-9208</p>
-            </div>
-            <br>
-            <h3 class="ui inverted attached header">이메일</h3>
-            <div id="q4" class="ui secondary attached segment">
-            <p>ajdkfl6445@gmail.com</p>
-            </div>
-            <br>
+        <!--그리드 왼쪽 2번 메뉴 영역-->
+        <div class="left_main_scope_one" id="grid3">
+        <ul>
+            <li><a class="nav_menu" href="about.html">ABOUT</a></li>
+            <li><a class="nav_menu" href="experience.html">EXPERIENCE</a></li>
+            <li><a class="nav_menu" href="">SKILLS</a></li>
+            <li><a class="nav_menu" href="">INTERESTS</a></li>
+        </ul>
+        </div>
+
+        <!--그리드 오른쪽 2번 메뉴 영역-->
+        <div class="right_main_scope_one" id="grid3">
+            
+                <div class="twelve wide stretched column" id="about_info">
+                        <div class="ui segments">
+                            <p class="segment_p">
+                                안녕하세요. 신입 개발자 <b>정규현</b>입니다.<br>
+                                대한민국 서울특별시 관악구 신림동에 거주하고 있습니다.<br> 
+                                현재는 강남에 위치한 비트캠프에서 "프론트엔드 및 백엔드 개발자 과정" 이수 중에 있으며,<br>
+                                <b>프로젝트</b> 및 <b>스터디</b> 제안 주시면 긍정적으로 검토 후 회신드리겠습니다.
+                            </p>
+                        </div>
+                </div>
+
+        </div>
        
 
-        <table class="ui black table">
-            <thead>
-              <tr><th>Food</th>
-              <th>Calories</th>
-              <th>Protein</th>
-            </tr></thead><tbody>
-              <tr>
-                <td>Apples</td>
-                <td>200</td>
-                <td>0g</td>
-              </tr>
-              <tr>
-                <td>Orange</td>
-                <td>310</td>
-                <td>0g</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="ui divider"></div>
-
-    <button class="ui button">Follow</button>
-
+    </div>
 </body>
+
 </html>

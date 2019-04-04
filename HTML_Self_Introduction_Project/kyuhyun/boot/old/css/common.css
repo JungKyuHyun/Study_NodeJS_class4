@@ -1,0 +1,98 @@
+/* html, body {
+     height:100%; 
+     overflow: scroll;
+    } 
+*/
+/* body {
+    text-align: center;
+    height: max-content;
+    width: 100%; 
+    border:2px black solid;
+}  */
+
+
+
+body {
+    padding: 7rem;
+    min-width: 800px !important;
+}
+
+/* #bg{
+    position: fixed;
+    top:0;
+    left:0;
+
+    min-width: 100%;
+    min-height: 100%;
+} */
+/* #bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  } */
+
+
+/* html { background: url(img/bg.jpg) no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;} */
+
+.align-center {
+    text-align: center !important;
+    font-style: italic !important;
+    font-size: 400% !important;
+    margin: 6rem;
+    padding-bottom: 5rem;
+    
+}
+.sub_title{
+    padding-bottom: 2rem;
+}
+
+.text-upper {
+    color: darkgray !important;
+    text-transform: uppercase;
+}
+
+.about_me1 h2, img {
+    margin: auto;
+    text-align: center;
+}
+
+/* h2 {
+    padding: 1rem;
+} */
+.about_me1 {
+    padding: 2rem;
+}
+table {
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color:#000000;
+}
+
+#main_menu {
+    margin: 3rem;
+}
+
+h3, #q0, #q1, #q2, #q3, #q4 {
+    max-width: 800px !important;
+    text-align: center;
+    margin: auto !important;
+}
