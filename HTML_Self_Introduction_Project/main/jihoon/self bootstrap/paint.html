@@ -11,12 +11,16 @@
     </head>
     <body>
         <div>
-            <canvas id="canvas" width="500" height="500">
-
-            </canvas>
+            <canvas id="canvas" width="500" height="500"></canvas>
+            <div>
+                <input type="button" value="펜" onclick="pen()"></input>
+                <input type="button" value="지우개" onclick="eraser()"></input>
+            </div>
+            
         </div>
 
         <script type="text/javascript">
+            var del;
             window.onload = function(){
                 var canvas = document.getElementById("canvas");
                 draw(canvas);
@@ -91,6 +95,14 @@
                 var y = event.pageY - canvas.offsetTop;
                 return {X: x, Y: y};
             }
+            var pen = function() {
+               del = 0;
+            }
+ 
+            var eraser = function(){
+               del = 1;
+            }
+            
         </script>
     </body>
 </html>
