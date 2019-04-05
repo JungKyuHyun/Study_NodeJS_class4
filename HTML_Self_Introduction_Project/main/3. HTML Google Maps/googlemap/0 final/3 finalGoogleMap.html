@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InputCityName</title>
+    <title>Geocoding Service</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <script src="js/html2canvas.js"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 50%;
+        height: 425px;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {        
+      html, body {
         height: 100%;
         margin: 0;
         padding: 0;
@@ -20,7 +19,7 @@
       #floating-panel {
         position: absolute;
         top: 10px;
-        left: 40%;
+        left: 25%;
         z-index: 5;
         background-color: #fff;
         padding: 5px;
@@ -30,12 +29,26 @@
         line-height: 30px;
         padding-left: 10px;
       }
-
-      #video{
-        position: relative;
-      }
-
     </style>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCwyWKS3bpd9QE5QOuwwdU_toLxTvARQ&callback=initMap"></script>
+ <script>
+  function initialize(frm) {
+   var lati = frm.Latitude.value;
+   var long = frm.Longitude.value;
+   var myLatlng = new google.maps.LatLng(lati, long);
+   var mapOptions = {
+        zoom: 17,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+   }
+   var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+   var marker = new google.maps.Marker({
+             position: myLatlng,
+             map: map,
+             title: "지정위치"
+});
+  }
+</script>
 
   </head>
   <body>
@@ -43,7 +56,6 @@
       <input id="address" type="textbox" value="Sydney, NSW">
       <input id="submit" type="button" value="Geocode">
     </div>
-
     <div id="map"></div>
     <script>
       function initMap() {
@@ -72,16 +84,40 @@
           }
         });
       }
-
-      
-      //<iframe width="30" height="30" src="https://www.youtube.com/embed/J5ZkwX_9xMo?list=PL-NENrMiVwUGV0drvPZfLHpOd71Do-1bG" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      
-
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCwyWKS3bpd9QE5QOuwwdU_toLxTvARQ&callback=initMap">
     </script>
 
+<button onclick="getLocation()">현재 위치 확인</button>
+          
+<p id="demo"></p>
+<script>
+          var x = document.getElementById("demo");
+          
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.watchPosition(showPosition);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+              
+          function showPosition(position) {
+              x.innerHTML="Latitude: " + position.coords.latitude + 
+              "<br>Longitude: " + position.coords.longitude;
+          }
+          </script>
+          
+
+     
+     <form name = "map">
+ <input type="text" name="Latitude" value = "위도">
+ <input type="text" name="Longitude" value = "경도">
+ <input type="button" name="btn" value="지정 위치 확인" onclick="initialize(this.form)" style="margin-left: 30px">
+ <br>
+ <div id="map_canvas"style="width:500px; height:300px;"></div>
+</form>
 
   </body>
 </html>

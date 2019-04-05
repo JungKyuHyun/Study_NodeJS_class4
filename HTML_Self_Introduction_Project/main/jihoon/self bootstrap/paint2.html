@@ -25,10 +25,13 @@
  </style>
  <script>
   var canvas;
-  var ctx;
+  var ctx ;
+  
   var del = 0;
   var flag = false;
- 
+  
+
+
   var ready = function(){
    canvas = document.getElementById("canvas");
    ctx = canvas.getContext("2d");
@@ -39,6 +42,7 @@
    ctx.lineWidth = 1;
    ctx.strokeStyle = 'black';
   }
+  
 
   var drawStart = function(event){
    ctx.beginPath();
@@ -118,12 +122,33 @@
   var colorWhite = function(){
     ctx.strokeStyle = 'white';
   }
+  var colorFill = function(){
+    ctx=document.getElementById("canvas").getContext("2d");
+    ctx.beginPath();
+    ctx.rect(0, 0, 500, 500);
+    ctx.fillStyle=ctx.strokeStyle;
+    ctx.fill();
+  }
+  function test()
+  {
+    var fso;
+    fso = new ActiveXObject("scripting.FileSystemObject"); 
+    var srt = fso.GetFolder("c:\\Temp");
+    var fc = new Enumerator(srt.files);
+    for (; !fc.atEnd(); fc.moveNext())
+    document.write(fc.item().name + "<br>\n");
+  }
+
+
  </script>
  
 </head>
 
 <body onload="ready()">
- 
+    
+  <div id = 'fafa'>
+    
+  </div>
  <canvas id="canvas" width="500" height="500"></canvas>
  <div>
      <table>
@@ -143,12 +168,16 @@
             <td id = "btn"><input type="image" src="pencil.png" value="pencil" onclick="pen()" style="width:30px;"></input></td>
             <td id = "btn"><input type="image" src="paint-brush.png" value="paintbrush" onclick="paintBrush()"style="width:30px;"></input></td>
             <td id = "btn"><input type="image" src="brush.png" value="brush" onclick="brush()"style="width:30px;"></input></td>
-            <td id = "btn"><input type="image" src="eraser.png" value="eraser" onclick="eraser()"style="width:30px;"></input></td></tr>
+            <td id = "btn"><input type="image" src="eraser.png" value="eraser" onclick="eraser()"style="width:30px;"></input></td>
+            <td id = "btn"><input type="image" src="paint-bucket.png" value="colorFill" onclick="colorFill()"style="width:30px;"></input></td>
+          </tr>
+        <a href ="filename"><document.write('filename')<></a>
         
         
     </table>
     
     <table></table>
  </div>
+ 
 </body>
 </html>
