@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="euc-kr">
+ <title>구글지도 현재 위치</title>
+<<<<<<< HEAD
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCwyWKS3bpd9QE5QOuwwdU_toLxTvARQ&callback=initMap"></script>
+=======
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCwyWKS3bpd9QE5QOuwwdU_toLxTvARQ&callback=initMap"></script>ㄴ
+>>>>>>> 6afd1787a895c7afb7d76926353bf1b79e7d8ac1
+ <script>
+  function initialize(frm) {
+   var lati = frm.Latitude.value;
+   var long = frm.Longitude.value;
+   var myLatlng = new google.maps.LatLng(lati, long);
+   var mapOptions = {
+        zoom: 17,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+   }
+   var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+   var marker = new google.maps.Marker({
+             position: myLatlng,
+             map: map,
+             title: "지정위치"
+});
+  }
+
+  
+
+
+</script>
+
+
+</head>
+
+<body>
+
+<button onclick="getLocation()">현재 위치 확인</button>
+          
+<p id="demo"></p>
+<script>
+          var x = document.getElementById("demo");
+          
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.watchPosition(showPosition);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+              
+          function showPosition(position) {
+              x.innerHTML="Latitude: " + position.coords.latitude + 
+              "<br>Longitude: " + position.coords.longitude;
+          }
+          </script>
+          
+
+     
+     <form name = "map">
+ <input type="text" name="Latitude" value = "위도">
+ <input type="text" name="Longitude" value = "경도">
+ <input type="button" name="btn" value="지정 위치 확인" onclick="initialize(this.form)" style="margin-left: 30px">
+ <br>
+ <div id="map_canvas"style="width:500px; height:300px;"></div>
+</form>
+
+
+</body>
+</html>
