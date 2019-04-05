@@ -4,6 +4,9 @@
  <meta charset="UTF-8">
  <title>지우개</title>
  <style>
+ #btn{
+     width:1px;
+ }    
  body{
   margin:20px;
  }
@@ -14,6 +17,7 @@
    -webkit-box-shadow:1px 1px 20px #ccc;
    -moz-box-shadow:1px 1px 20px #ccc;
   box-shadow:1px 1px 20px #ccc;
+  
  }
  input {
   border:1px solid #000;
@@ -21,10 +25,13 @@
  </style>
  <script>
   var canvas;
-  var ctx;
+  var ctx ;
+  
   var del = 0;
   var flag = false;
- 
+  
+
+
   var ready = function(){
    canvas = document.getElementById("canvas");
    ctx = canvas.getContext("2d");
@@ -32,9 +39,10 @@
    canvas.onmousemove = drawing;
    window.onmouseup = drawEnd;
    
-   ctx.lineWidth = 10;
-   ctx.strokeStyle = '#ff0000';
+   ctx.lineWidth = 1;
+   ctx.strokeStyle = 'black';
   }
+  
 
   var drawStart = function(event){
    ctx.beginPath();
@@ -66,19 +74,110 @@
 
   var pen = function() {
       del = 0;
+      ctx.lineWidth=1;
+
   }
  
   var eraser = function(){
    del = 1;
   }
+
+  var brush = function(){
+    del = 0;
+
+    ctx.lineWidth = 13;
+  }
+  var paintBrush = function(){
+    del = 0;
+
+    ctx.lineWidth = 5;
+  }
+  var colorRed = function(){
+    ctx.strokeStyle = 'red';
+  }
+  var colorBlack = function(){
+    ctx.strokeStyle = 'black';
+  }
+  var colorBlue = function(){
+    ctx.strokeStyle = 'blue';
+  }
+  var colorGray = function(){
+    ctx.strokeStyle = 'gray';
+  }
+  var colorYellow = function(){
+    ctx.strokeStyle = 'yellow';
+  }
+  var colorOrange = function(){
+    ctx.strokeStyle = 'orange';
+  }
+  var colorGreen = function(){
+    ctx.strokeStyle = 'green';
+  }
+  var colorPurple = function(){
+    ctx.strokeStyle = 'purple';
+  }
+  var colorSkyblue = function(){
+    ctx.strokeStyle = 'skyblue';
+  }
+  var colorWhite = function(){
+    ctx.strokeStyle = 'white';
+  }
+  var colorFill = function(){
+    ctx=document.getElementById("canvas").getContext("2d");
+    ctx.beginPath();
+    ctx.rect(0, 0, 500, 500);
+    ctx.fillStyle=ctx.strokeStyle;
+    ctx.fill();
+  }
+  function test()
+  {
+    var fso;
+    fso = new ActiveXObject("scripting.FileSystemObject"); 
+    var srt = fso.GetFolder("c:\\Temp");
+    var fc = new Enumerator(srt.files);
+    for (; !fc.atEnd(); fc.moveNext())
+    document.write(fc.item().name + "<br>\n");
+  }
+
+
  </script>
+ 
 </head>
 
 <body onload="ready()">
+    
+  <div id = 'fafa'>
+    
+  </div>
+ <canvas id="canvas" width="500" height="500"></canvas>
  <div>
-  <input type="button" value="펜" onclick="pen()"></input>
-  <input type="button" value="지우개" onclick="eraser()"></input>
+     <table>
+         <tr>
+            <td id = "btn" style ="padding:0px"><input type="image" src="black.png" value="black" onclick="colorBlack()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="white.png" value="white" onclick="colorWhite()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="red.png" value="red" onclick="colorRed()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="blue.png" value="blue" onclick="colorBlue()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="gray.png" value="gray" onclick="colorGray()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="yellow.png" value="yellow" onclick="colorYellow()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="orange.png" value="oragne" onclick="colorOrange()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="green.png" value="green" onclick="colorGreen()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="purple.png" value="purple" onclick="colorPurple()" style="width:30px;"></input></td>
+            <td id = "btn" style ="padding:0px"><input type="image" src="skyblue.png" value="skyblue" onclick="colorSkyblue()" style="width:30px;"></input></td>
+        </tr>
+        <tr>
+            <td id = "btn"><input type="image" src="pencil.png" value="pencil" onclick="pen()" style="width:30px;"></input></td>
+            <td id = "btn"><input type="image" src="paint-brush.png" value="paintbrush" onclick="paintBrush()"style="width:30px;"></input></td>
+            <td id = "btn"><input type="image" src="brush.png" value="brush" onclick="brush()"style="width:30px;"></input></td>
+            <td id = "btn"><input type="image" src="eraser.png" value="eraser" onclick="eraser()"style="width:30px;"></input></td>
+            <td id = "btn"><input type="image" src="paint-bucket.png" value="colorFill" onclick="colorFill()"style="width:30px;"></input></td>
+          </tr>
+        <a href ="filename"><document.write('filename')<></a>
+        
+        
+    </table>
+    
+    <table></table>
  </div>
- <canvas id="canvas" width="675" height="250"></canvas>
+ 
 </body>
 </html>
