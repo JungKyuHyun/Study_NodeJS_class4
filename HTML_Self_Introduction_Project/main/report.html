@@ -94,6 +94,9 @@
     outline : none;
     border:none;
   }
+  #earth{
+    outline : none;
+  }
   input::placeholder { 
     color: #dddddd;
     
@@ -117,16 +120,18 @@
              onmouseout="changeColor2(this)"> 
             
       <br><br>
-      <input id="searchBtn" type = "image" src = "magnifier.png" alt="Submit"  value="검색" width="42.5" height="20"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
-      <input id="picture_board" type = "image" src = "draw-a-picture.png" alt="Submit"  value="검색" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
-      <input id="earth" type = "image" src = "earth.png" alt="Submit"  value="검색" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="searchBtn" type = "image" src = "magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
+      
+      <input id="picture_board" type = "image" src = "draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      
+      <input id="earth" type = "image" src = "earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
        
     </div>
     <script>
       var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하', '그림판'];
       var searchBtn = document.querySelector('#searchBtn');
       var textBox = document.querySelector('#textBox');
-
+      var picture_board = document.querySelector('#picture_board');
       function changeColorIcon(obj){
         if(obj.id=="searchBtn"){
           obj.src="magnifier-gray.png"
@@ -154,26 +159,40 @@
       }
       var findTeam = function (){
         if (team4.indexOf(textBox.value) == 0) {
-          location.href = 'DongHyeon/Portfolio_Bootstrap/index.html';
+          window.open('DongHyeon/Portfolio_Bootstrap/index.html');
+          textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 1){
-          location.href = 'dabeen/index.html';
+          window.open('dabeen/index.html');
+          textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 2){
-          location.href = 'jihoon/self bootstrap/introduce.html';
+          window.open('jihoon/self bootstrap/introduce.html');
+          textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 3){
-          location.href = 'yeji/부트스트랩/index.html';
+          window.open('yeji/부트스트랩/index.html');
+          textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 4){
-          location.href = 'kyuhyun/bootstrap/index.html';
+          window.open('kyuhyun/bootstrap/index.html');
+          textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 5){
-          location.href = 'SUN HA/index.html';
-        }else if(team4.indexOf(textBox.value) == 7){
-          location.href = 'http://www.naver.com'; 
+          window.open('SUN HA/index.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 6){
+          window.open('jihoon/self bootstrap/paint.html');
+          textBox.value = '';
         }else{
           alert('4조원의 이름이 아닙니다.');
           textBox.value = '';
         }
       }
+      var openPictureBoard = function(){
+        window.open("jihoon/self bootstrap/paint.html" ,"zipcode","width=800 , height=600");
+      }
 
+
+
+      picture_board.addEventListener('click',openPictureBoard);
       searchBtn.addEventListener('click', findTeam);
+
       textBox.addEventListener('keyup', function(e) {
         if (e.keyCode === 13) {
           findTeam();
