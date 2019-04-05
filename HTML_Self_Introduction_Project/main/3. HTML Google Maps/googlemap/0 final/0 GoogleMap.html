@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <meta charset="euc-kr" />
     <title>구글지도 현재 위치</title>
@@ -25,6 +26,29 @@
       }
     </script>
   </head>
+=======
+<head>
+  <meta charset="UTF-8">
+ <title>구글지도 현재 위치</title>
+ <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ <script>
+  function initialize(frm) {
+   var lati = frm.Latitude.value;
+   var long = frm.Longitude.value;
+   var myLatlng = new google.maps.LatLng(lati, long);
+   var mapOptions = {
+        zoom: 17,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+   }
+   var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+   var marker = new google.maps.Marker({
+             position: myLatlng,
+             map: map,
+             title: "지정위치"
+});
+  }
+>>>>>>> fa8ef5cfc62fbf4ab56759b59d8a07e49f20a6f3
 
   <body>
     <button onclick="getLocation()">현재 위치 확인</button>
