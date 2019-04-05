@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <style>
+   .content3 {
+      padding: 20px;
+      text-align: center;
+      font-style: "맑은고딕";
+      letter-spacing: 5px;
+      margin-top: 30px;
+      margin-left: 13%;
+      margin-right: 13%;
+      margin-bottom: 50px;
+      background-color: whitesmoke;
+      padding-left: 27px;
+      padding-right: 27px;
+      height: 600px;
+    }
+  </style>
+<body>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+<div class="content3">
+  <h2>&nbsp;&nbsp;Location</h2>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25326.51049018325!2d126.9993459117683!3d37.48871985404036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca16abf1bd3b3%3A0xa4dcd8abd096a6e6!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjrj5k!5e0!3m2!1sko!2skr!4v1554405890002!5m2!1sko!2skr"
+    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+</div>
+
+
+</body>
+</html>
