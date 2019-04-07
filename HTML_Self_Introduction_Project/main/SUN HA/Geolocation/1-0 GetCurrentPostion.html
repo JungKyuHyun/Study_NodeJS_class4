@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GeoLocation22_1.html</title>
+    <script>
+        console.log('' + navigator.geolocation);
+        var span;
+        window.onload = function () {
+            // DOM 객체 얻기
+            span = document.getElementById("display");
+            //
+            if (navigator.geolocation) // 브라우저에서 웹 지오로케이션 지원여부 판단
+            {
+                span.innerHTML = "GeoLocation API 를 지원하는 브라우저";
+                // PositionOptions 객체 설정용
+                var options = { timeout: 2000, maximumAge: 3000 };
+                options.enableHighAccuracy = true;
+                // 현재 위치정보 딱 한번 얻기
+                navigator.geolocation.getCurrentPosition(sucCall, errCall, options);
+            }
+            else {
+                span.innerHTML = "GeoLocation API 를 지원하지 않는 브라우저 입니다.";
+            }
+        };
+
+        // 위치정보 얻기 성공시 자동으로 호출되는 콜백함수. 인자는 Position 객체
+        var sucCall = function (position) {
+            // 위도, 경도 얻기
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+
+            span.innerHTML = '위도 : ' + lat + ', 경도 : ' + lng;
+        };
+
+        // 위치정보 얻기 실패시 자동으로 호출되는 콜백함수. 인자는 PositionError 객체
+        function errCall(error) {
+            switch (error.code) {
+                case 1:
+                    span.innerHTML = "허용거부됨";
+                    break;
+                case 2:
+                    span.innerHTML = "위치 확인 불가";
+                    break;
+                case 3:
+                    span.innerHTML = "시간초과";
+                    break;
+                case 0:
+                    span.innerHTML = "알 수 없는 오류";
+                    break;
+                default:
+                    span.innerHTML = error.message;
+            }
+        };
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>GeoLocation API - 현재 위치에 위도와 경도 얻기</legend>
+        <span id="display" style="color:red;font-size:1.5em;font-weight:bold"></span>
+    </fieldset>
+</body>
+</html>
