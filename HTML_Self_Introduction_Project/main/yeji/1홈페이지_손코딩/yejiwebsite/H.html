@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <style>
+        
 
             body {
                 background-color: rgb(253, 218, 253);
@@ -63,11 +65,16 @@
             img {
                 max-width: 100%;
                 height: auto;
+                float:left;
                 }
 
+            .cities {
+                  background-color: rgb(255, 255, 255);
+                  color: rgb(0, 0, 0);
+                  margin: 20px;
+                  padding: 20px;
+                    }
 
-    
-    
             </style>
 </head>
 <body>
@@ -75,15 +82,32 @@
                 <h2>Yeji's House</h2>
         </header>
         <ul>
-                <li><a href="home.html"><b>Intro</b></a></li>
-                <li><a href="p.html"><b>Personality</b></a></li>
-                <li><a href="h.html"><b>Hobby</b></a></li>
+                <li><a href="http://127.0.0.1:5500/yejiwebsite/home.html"><b>Intro</b></a></li>
+                <li><a href="http://127.0.0.1:5500/yejiwebsite/p.html"><b>Personality</b></a></li>
+                <li><a href="http://127.0.0.1:5500/yejiwebsite/h.html"><b>Hobby</b></a></li>
               </ul>
 
-              <div>
-                    <p><img src="인트로.png" align="top">
-                      </p>
+              <div class="cities">
+                    <p>
+                        <h2>게임 플레이 영상</h2>                            
+                        <video width="560" height="350" controls>
+                                <source src="image/마카롱.mp4" type="video/mp4">
+                                 Your browser does not support the video tag.
+                        </video>
 
+                    <br><br>
                     </div> 
+
+                    <div class="cities">
+                            <p>   
+                                <h2>게임 플레이 영상</h2>                  
+                                <video width="560" height="350" controls>
+                                        <source src="image/마카롱2.mp4" type="video/mp4">
+                                         Your browser does not support the video tag.
+                                </video>
+        
+                            <br>
+                            </div> 
+
 </body>
 </html>
