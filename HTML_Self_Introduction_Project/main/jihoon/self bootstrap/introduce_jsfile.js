@@ -15,7 +15,7 @@ function myFunction(){
 
     function myFunction2(){
      
-                window.open("slide.html","zipcode","width=800 , height=600");
+                window.open("slide.html","zipcode","width=1000 , height=600");
         }
 
 var colours=new Array('#색상코드', '#색상코드', '#색상코드', '#색상코드', '#색상코드', '#색상코드');
