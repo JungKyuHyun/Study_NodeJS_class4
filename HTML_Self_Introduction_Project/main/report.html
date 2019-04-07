@@ -144,7 +144,7 @@
     </div>
     
     <script>
-      var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하','4조 부트스트랩'];
+      var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하','4조 부트스트랩','SVG'];
       var searchBtn = document.querySelector('#searchBtn');
       var textBox = document.querySelector('#textBox');
       var picture_board = document.querySelector('#picture_board');
@@ -199,6 +199,10 @@
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 6){
           window.open('yeji/3Bootstrap_main/2번시안/0-1index.html');
+          textBox.value = '';
+          
+        }else if(team4.indexOf(textBox.value) == 7){
+          window.open('HTML_svg_game/HTML_SVG.html');
           textBox.value = '';
         }else{
           alert('4조원의 이름이 아닙니다.');
