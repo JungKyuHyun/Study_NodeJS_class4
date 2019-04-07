@@ -1,106 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-
-            body {
-                background-color: rgb(253, 218, 253);
-                }       
-            header {
-               font-family:'돋움체';
-               background-color: rgb(175, 108, 206);
-               padding: 30px;
-               text-align: center;
-               font-size: 35px;
-               color: white;
-               border-style : double;
-                    }
-    
-            ul {
-              font-family:'돋움체';
-              list-style-type: none;
-              margin: 0;
-              padding: 0;
-              overflow: hidden;
-              background-color: rgb(243, 154, 188);
-            }
-            
-            li {
-              float: left;
-            }
-            
-            li a {
-              display: block;
-              color: white;
-              text-align: center;
-              padding: 16px;
-              text-decoration: none;
-            }
-            
-            li a:hover {
-              background-color: rgb(180, 179, 179);
-            }
-            .cities {
-              background-color: rgb(255, 255, 255);
-              color: rgb(0, 0, 0);
-              margin: 10px;
-              padding: 16px;
-              
-            }
-
-            p {
-                font-family:'돋움체';
-            }
-
-            h2 {
-                font-family:'돋움체';
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-                }
-
-
-    
-    
-            </style>
-
-<script>
-  $(window).load(function () {
-    $('body').sakura();
-  });
-</script>
-
-
-</head>
-<body>
-  
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>예지의 홈페이지</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="sakura.css">
+		<script>
+			$(window).load(function () {
+				$('body').sakura();
+			});
+		</script>
+		    <style>
+				.mySlides {display:none;}
+				body {
+					background-color: rgb(253, 218, 253);
+					
+					}       
+				header {
+				   font-family:'돋움체';
+				   background-color: rgb(175, 108, 206);
+				   padding: 30px;
+				   text-align: center;
+				   font-size: 35px;
+				   color: white;
+				   border-style : double;
+				   margin-left: 15%;
+				  margin-right: 15%;
+						}
+		
+				ul {
+				  font-family:'돋움체';
+				  list-style-type: none;
+				  margin: 0;
+				  padding: 0;
+				  overflow: hidden;
+				  background-color: rgb(243, 154, 188);
+				  margin-left: 15%;
+				  margin-right: 15%;
+				}
+				
+				li {
+				  float: left;
+				}
+				
+				li a {
+				  display: block;
+				  color: white;
+				  text-align: center;
+				  padding: 16px;
+				  text-decoration: none;
+				}
+				
+				li a:hover {
+				  background-color: rgb(180, 179, 179);
+				}
+				.cities {
+				  background-color: rgb(255, 255, 255);
+				  color: rgb(0, 0, 0);
+				  margin-left: 15%;
+				  margin-right: 15%;
+				  
+				}
+	
+				p {
+					font-family:'돋움체';
+				}
+	
+				h2 {
+					font-family:'돋움체';
+				}
+	
+				img {
+					max-width: 100%;
+					height: auto;
+					float:left;
+					align:center;
+					}
+	
+	
+		
+		
+				</style>
+	</head>
+	<body>
+			<script type="text/JavaScript"> 
+				<!-- 
+				function MM_openBrWindow(theURL,winName,features) { //v2.0 
+				  window.open(theURL,winName,features); 
+				} 
+				//--> 
+				</script> 
+ 
         <header>
-                <h2>Yeji's House</h2>
-        </header>
+                <h1><br>Yeji's House<br><br></h1>
+		</header>
+		<br>
         <ul>
                 <li><a href="home.html"><b>Intro</b></a></li>
                 <li><a href="P.html"><b>Personality</b></a></li>
                 <li><a href="H.html"><b>Hobby</b></a></li>
               </ul>
               
-              <div>
-                  <p><img src="images/인트로.png" align="top">
+              <div class="cities">
+                    <p><img src="images/프로필.png" width="300" height="300" align="top">
+                        <br>
+                        <mark><b>권예지</b></mark> <i>Gwon ye ji</i> <br><br>
+                       <br>
+                        나이 : 24<br>
+                        혈액형 : B형<br>
+                        별자리 : 처녀자리<br>
+                        키 : 163cm<br>
+                        몸무게 : 비공개<br>
+                        취미 : 3탐방(맛집,디저트카페,펍) , 게임, 독서<br>
+                        한마디 : 존버는 승리한다 ♡<br>
+                        가장 아끼는 것 : 우리 가족<br>
+                        <br><br><br>
                     </p>
+                    </div> 
 
-                  </div> 
+		 <div class="cities">
+						<p> <h3>&nbsp; Favorit Pub</h3>	
+							<a href="#"><img src="images/6.jpg" width="245" height="245" border="0" 
+							onclick="MM_openBrWindow('images/6.jpg','','width=700,height=700')"/></a>
+							<a href="#"><img src="images/3.jpg" width="245" height="245" border="0" 
+							onclick="MM_openBrWindow('images/3.jpg','','width=700,height=700')"/></a>
+							<a href="#"><img src="images/5.jpg" width="245" height="245" border="0" 
+							onclick="MM_openBrWindow('images/5.jpg','','width=700,height=700')"/></a>
+							<a href="#"><img src="images/4.jpg" width="245" height="245" border="0" 
+							onclick="MM_openBrWindow('images/4.jpg','','width=700,height=700')"/></a>
+							<br><br><br><br><br><br><br><br><br><br><br><br>
+							<!-- 누르면 팝업창이 뜨게 했음 -->
+						</p>      
+		  </div>   
 
-                  <div id="copyright">
-                    <div class="container">
-                      Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-                    </div>
-                  </div>
-                  <script src="js/sakura.js"></script>    
 
-</body>
+  </div>   
+
+
+	<div class="w3-content w3-display-container cities">
+			
+		<h3>&nbsp; Favorit Food</h3>	
+
+				<img class="mySlides" src="images/음식1.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식2.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식9.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식4.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식0.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식5.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식6.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식7.jpg" style="width:100%">
+				<img class="mySlides" src="images/음식8.jpg" style="width:100%">
+				<br><br><br><br><br><br><br><br><br><br><br><br>	
+				<br><br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br><br>	
+				<br><br><br><br>	
+				<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+				<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+			
+
+		</div>
+  <script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
+		
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
+		
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";  
+		  }
+		  x[slideIndex-1].style.display = "block";  
+		}
+		</script>
+		
+		<script src="sakura.js"></script>
+	</body>
 </html>
