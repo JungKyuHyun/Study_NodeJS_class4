@@ -138,7 +138,30 @@
     for (; !fc.atEnd(); fc.moveNext())
     document.write(fc.item().name + "<br>\n");
   }
-
+  function draw() {
+    var canvas = document.getElementById("myCanvas");
+    canvas.width = canvas.width; // 캔버스 내용 지우기
+    var context = canvas.getContext("2d");
+    var s=document.getElementById("Polygon").value;
+    context.lineWidth=5;
+    context.beginPath();
+    polygon(context,150, 150, 100, s, -Math.PI/2);
+    context.stroke();
+  }
+  function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
+    if (sides < 3) return;
+    var a = (Math.PI * 2)/sides;
+    a = anticlockwise?-a:a;
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.rotate(startAngle);
+    ctx.moveTo(radius,0);
+    for (var i = 1; i < sides; i++) {
+        ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
+    }
+    ctx.closePath();
+    ctx.restore();
+}
 
  </script>
  
@@ -170,6 +193,8 @@
             <td id = "btn"><input type="image" src="brush.png" value="brush" onclick="brush()"style="width:30px;"></input></td>
             <td id = "btn"><input type="image" src="eraser.png" value="eraser" onclick="eraser()"style="width:30px;"></input></td>
             <td id = "btn"><input type="image" src="paint-bucket.png" value="colorFill" onclick="colorFill()"style="width:30px;"></input></td>
+            <td id = "btn"><input type="image" src="paint-bucket.png" value="colorFill" onclick="draw()"style="width:30px;"></input></td>
+
           </tr>
         <a href ="filename"><document.write('filename')<></a>
         
