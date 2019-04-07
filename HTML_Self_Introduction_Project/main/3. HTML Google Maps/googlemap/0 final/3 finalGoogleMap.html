@@ -104,16 +104,17 @@
           }
               
           function showPosition(position) {
-              x.innerHTML="Latitude: " + position.coords.latitude + 
-              "<br>Longitude: " + position.coords.longitude;
+              document.map.Latitude.value = position.coords.latitude;  
+              document.map.Longitude.value = position.coords.longitude;  
           }
+          
           </script>
           
 
      
      <form name = "map">
- <input type="text" name="Latitude" value = "위도">
- <input type="text" name="Longitude" value = "경도">
+ <input type="text" name="Latitude" value = "위도" id="latitude">
+ <input type="text" name="Longitude" value = "경도" id="longitude">
  <input type="button" name="btn" value="지정 위치 확인" onclick="initialize(this.form)" style="margin-left: 30px">
  <br>
  <div id="map_canvas"style="width:500px; height:300px;"></div>
