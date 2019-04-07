@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geocoding Service</title>
+    <title>InputCityName</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <script src="js/html2canvas.js"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 425px;
+        height: 50%;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {
+      html, body {        
         height: 100%;
         margin: 0;
         padding: 0;
@@ -19,7 +20,7 @@
       #floating-panel {
         position: absolute;
         top: 10px;
-        left: 25%;
+        left: 40%;
         z-index: 5;
         background-color: #fff;
         padding: 5px;
@@ -29,6 +30,11 @@
         line-height: 30px;
         padding-left: 10px;
       }
+
+      #video{
+        position: relative;
+      }
+
     </style>
 
   </head>
@@ -37,6 +43,7 @@
       <input id="address" type="textbox" value="Sydney, NSW">
       <input id="submit" type="button" value="Geocode">
     </div>
+
     <div id="map"></div>
     <script>
       function initMap() {
@@ -65,6 +72,11 @@
           }
         });
       }
+
+      
+      //<iframe width="30" height="30" src="https://www.youtube.com/embed/J5ZkwX_9xMo?list=PL-NENrMiVwUGV0drvPZfLHpOd71Do-1bG" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCwyWKS3bpd9QE5QOuwwdU_toLxTvARQ&callback=initMap">
