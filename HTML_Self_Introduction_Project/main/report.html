@@ -95,7 +95,20 @@
     border:none;
   }
   #earth{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
     outline : none;
+    border:none;
+  }
+  #game{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
   }
   input::placeholder { 
     color: #dddddd;
@@ -121,17 +134,21 @@
             
       <br><br>
       <input id="searchBtn" type = "image" src = "magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
+      <input id="game" type = "image" src = "gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
       
       <input id="picture_board" type = "image" src = "draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
       
-      <input id="earth" type = "image" src = "earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="earth" type = "image" src = "earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
+      
        
     </div>
+    
     <script>
       var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하', '그림판'];
       var searchBtn = document.querySelector('#searchBtn');
       var textBox = document.querySelector('#textBox');
       var picture_board = document.querySelector('#picture_board');
+      var game = document.querySelector('#game');
       function changeColorIcon(obj){
         if(obj.id=="searchBtn"){
           obj.src="magnifier-gray.png"
@@ -139,6 +156,8 @@
           obj.src="draw-a-picture-gray.png"
         }else if(obj.id=="earth"){
           obj.src="earth-gray.png"
+        }else if(obj.id=="game"){
+          obj.src="gamepad-gray.png"
         }
       }
       function changeColorIcon2(obj){
@@ -148,6 +167,8 @@
           obj.src="draw-a-picture.png"
         }else if(obj.id=="earth"){
           obj.src="earth.png"
+        }else if(obj.id=="game"){
+          obj.src="gamepad.png"
         }
       }
       function changeColor(obj){
@@ -190,11 +211,13 @@
       var openGoogleEarth = function(){
         window.open("3. HTML Google Maps/googlemap/0 final/3 finalGoogleMap.html","zipcode","width=700,height=800")
       }
-
+      var openGame = function(){
+        window.open("HTML_svg_game/HTML_GAME.html","zipcode","width=1050 ,height=550")
+      }
       earth.addEventListener('click',openGoogleEarth)
       picture_board.addEventListener('click',openPictureBoard);
       searchBtn.addEventListener('click', findTeam);
-
+      game.addEventListener('click',openGame)
       textBox.addEventListener('keyup', function(e) {
         if (e.keyCode === 13) {
           findTeam();
