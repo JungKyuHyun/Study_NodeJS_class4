@@ -13,6 +13,11 @@ function myFunction(){
         }, 1000);
     }
 
+    function myFunction2(){
+     
+                window.open("slide.html","zipcode","width=1000 , height=600");
+        }
+
 var colours=new Array('#색상코드', '#색상코드', '#색상코드', '#색상코드', '#색상코드', '#색상코드');
 var minisize=15; // smallest size of hearts in pixels
 var maxisize=20; // biggest size of hearts in pixels
