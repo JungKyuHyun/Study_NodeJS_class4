@@ -64,7 +64,7 @@
       }
     .searchBox {
     font: bold 16px 맑은 고딕,dotum,arial,sans-serif;
-    width :35%;
+    width :40%;
     line-height: 34px;
     height: 50px !important;
     padding : 15px 15px 15px 15px ;
@@ -110,6 +110,14 @@
     outline : none;
     border:none;
   }
+  #clock{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
+  }
   input::placeholder { 
     color: #dddddd;
     
@@ -137,14 +145,15 @@
       <input id="game" type = "image" src = "gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
       
       <input id="picture_board" type = "image" src = "draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
-      
+      <input id="clock" type = "image" src = "clock.png" alt="Submit"  value="시계" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+
       <input id="earth" type = "image" src = "earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
       
        
     </div>
     
     <script>
-      var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하','4조 부트스트랩'];
+      var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하','4조 부트스트랩','SVG'];
       var searchBtn = document.querySelector('#searchBtn');
       var textBox = document.querySelector('#textBox');
       var picture_board = document.querySelector('#picture_board');
@@ -158,6 +167,8 @@
           obj.src="earth-gray.png"
         }else if(obj.id=="game"){
           obj.src="gamepad-gray.png"
+        }else if(obj.id=="clock"){
+          obj.src="clock-gray.png"
         }
       }
       function changeColorIcon2(obj){
@@ -169,6 +180,8 @@
           obj.src="earth.png"
         }else if(obj.id=="game"){
           obj.src="gamepad.png"
+        }else if(obj.id=="clock"){
+          obj.src="clock.png"
         }
       }
       function changeColor(obj){
@@ -200,6 +213,10 @@
         }else if(team4.indexOf(textBox.value) == 6){
           window.open('yeji/3Bootstrap_main/2번시안/0-1index.html');
           textBox.value = '';
+          
+        }else if(team4.indexOf(textBox.value) == 7){
+          window.open('HTML_svg_game/HTML_SVG.html');
+          textBox.value = '';
         }else{
           alert('4조원의 이름이 아닙니다.');
           textBox.value = '';
@@ -214,7 +231,11 @@
       var openGame = function(){
         window.open("HTML_svg_game/HTML_GAME.html","zipcode","width=1050 ,height=550")
       }
-      earth.addEventListener('click',openGoogleEarth)
+      var openClock = function(){
+        window.open("kyuhyun/Clock/clock.html","zipcode","width=1100 ,height=75")
+      }
+      clock.addEventListener('click',openClock);
+      earth.addEventListener('click',openGoogleEarth);
       picture_board.addEventListener('click',openPictureBoard);
       searchBtn.addEventListener('click', findTeam);
       game.addEventListener('click',openGame)
