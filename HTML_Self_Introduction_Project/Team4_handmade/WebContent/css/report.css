@@ -1,0 +1,121 @@
+body {
+    margin: 0px;
+  }
+
+  div {
+    margin: 10px;
+    padding: 20px;
+    border: 10px solid #dddddd;
+    width: 90%;
+    
+  }
+  .header{
+      text-align : center;
+      border:none;
+      font-weight : bold;
+      color:white;
+      
+  }
+  .header, .content {
+    box-sizing: content-box;
+    
+  }
+  .nav{
+    background-color:#dddddd;
+    padding:5px 20px 5px 20px;
+    
+  }
+  p{
+      margin : 0px;
+  }
+  h3{
+      margin : 0px 10px 10px 10px;
+  }
+  .menu{
+      
+      overflow: hidden;
+      margin : 5px;
+      border : none;
+      display:initial;
+      text-align : center;
+      font-weight: bold;
+      padding :0px 50px 0px 50px;
+  }
+  .content {
+    text-align: center;
+    border:none;
+  }
+a:link{
+    color:black;
+    text-decoration: none;
+}
+a:visited{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color:gray;
+    text-decoration: none;
+  }
+.searchBox {
+font: bold 16px 맑은 고딕,dotum,arial,sans-serif;
+width :40%;
+line-height: 34px;
+height: 50px !important;
+padding : 15px 15px 15px 15px ;
+border-color :black;
+border-radius: 10px 10px 10px 10px;
+border-style : solid;
+outline : none; 
+
+
+}
+#searchBtn{
+font: bold 10px 맑은 고딕,dotum,arial,sans-serif;
+
+height: 50px !important;
+border-style:solid;
+margin:0px !important;
+padding : 0px 40px 0px 5px ;
+line-height: 34px;
+outline : none;
+border:none;
+}
+#picture_board{
+border-style:solid;
+margin:0px !important;
+padding : 1px 40px 0px 5px ;
+line-height: 34px;
+outline : none;
+border:none;
+}
+#earth{
+border-style:solid;
+margin:0px !important;
+padding : 1px 40px 0px 5px ;
+line-height: 34px;
+outline : none;
+border:none;
+}
+#game{
+border-style:solid;
+margin:0px !important;
+padding : 1px 40px 0px 5px ;
+line-height: 34px;
+outline : none;
+border:none;
+}
+#clock{
+border-style:solid;
+margin:0px !important;
+padding : 1px 40px 0px 5px ;
+line-height: 34px;
+outline : none;
+border:none;
+}
+input::placeholder { 
+color: #dddddd;
+
+font-size: 1.0em;
+text-align : left;
+}
