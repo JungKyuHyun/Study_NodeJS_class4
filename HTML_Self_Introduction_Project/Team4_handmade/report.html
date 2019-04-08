@@ -142,13 +142,13 @@
              onmouseout="changeColor2(this)"> 
             
       <br><br>
-      <input id="searchBtn" type = "image" src = "images/magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
-      <input id="game" type = "image" src = "images/gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="searchBtn" type = "image" src = "../images/magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
+      <input id="game" type = "image" src = "../images/gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
       
-      <input id="picture_board" type = "image" src = "images/draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
-      <input id="clock" type = "image" src = "images/clock.png" alt="Submit"  value="시계" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="picture_board" type = "image" src = "../images/draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="clock" type = "image" src = "../images/clock.png" alt="Submit"  value="시계" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
 
-      <input id="earth" type = "image" src = "images/earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
+      <input id="earth" type = "image" src = "../images/earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
       
        
     </div>
@@ -161,28 +161,28 @@
       var game = document.querySelector('#game');
       function changeColorIcon(obj){
         if(obj.id=="searchBtn"){
-          obj.src="images/magnifier-gray.png"
+          obj.src="../images/magnifier-gray.png"
         }else if(obj.id=="images/picture_board"){
-          obj.src="images/draw-a-picture-gray.png"
+          obj.src="../images/draw-a-picture-gray.png"
         }else if(obj.id=="earth"){
-          obj.src="images/earth-gray.png"
+          obj.src="../images/earth-gray.png"
         }else if(obj.id=="game"){
-          obj.src="images/gamepad-gray.png"
+          obj.src="../images/gamepad-gray.png"
         }else if(obj.id=="clock"){
-          obj.src="images/clock-gray.png"
+          obj.src="../images/clock-gray.png"
         }
       }
       function changeColorIcon2(obj){
         if(obj.id=="searchBtn"){
-          obj.src="images/magnifier.png"
+          obj.src="../images/magnifier.png"
         }else if(obj.id=="picture_board"){
-          obj.src="images/draw-a-picture.png"
+          obj.src="../images/draw-a-picture.png"
         }else if(obj.id=="earth"){
-          obj.src="images/earth.png"
+          obj.src="../images/earth.png"
         }else if(obj.id=="game"){
-          obj.src="images/gamepad.png"
+          obj.src="../images/gamepad.png"
         }else if(obj.id=="clock"){
-          obj.src="images/clock.png"
+          obj.src="../images/clock.png"
         }
       }
       function changeColor(obj){
@@ -194,28 +194,28 @@
       }
       var findTeam = function (){
         if (team4.indexOf(textBox.value) == 0) {
-          window.open('Team4_handmade/WebContent/donghyeon/Portfolio.html');
+          window.open('../Team4_handmade/WebContent/donghyeon/Portfolio.html');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 1){
           window.open('#');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 2){
-          window.open('Team4_handmade/WebContent/jihoon/introduce1.html');
+          window.open('../Team4_handmade/WebContent/jihoon/introduce1.html');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 3){
-          window.open('Team4_handmade/WebContent/yeji/Yejiindex.html');
+          window.open('../Team4_handmade/WebContent/yeji/Yejiindex.html');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 4){
-          window.open('Team4_handmade/WebContent/kyuhyun/index.html');
+          window.open('../Team4_handmade/WebContent/kyuhyun/index.html');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 5){
-          window.open('Team4_handmade/WebContent/sunha/index.html');
+          window.open('../Team4_handmade/WebContent/sunha/index.html');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 6){
-          window.open('Team4_Boot/yeji/YejiBootstrapMain.html');
+          window.open('../Team4_Boot/yeji/YejiBootstrapMain.html');
           textBox.value = '';
         }else if(team4.indexOf(textBox.value) == 7){
-          window.open('Team4_API/WebContent/svg/HTML_SVG.html');
+          window.open('../Team4_API/WebContent/svg/HTML_SVG.html');
           textBox.value = '';
         }else{
           alert('4조원의 이름이 아닙니다.');
@@ -223,16 +223,16 @@
         }
       }
       var openPictureBoard = function(){
-        window.open("Team4_API/WebContent/paint/paint2.html" ,"zipcode","width=550 , height=629");
+        window.open("../Team4_API/WebContent/paint/paint2.html" ,"zipcode","width=550 , height=629");
       }
       var openGoogleEarth = function(){
-        window.open("Team4_API/WebContent/Google Maps/googlemap/0 final/3 finalGoogleMap.html","zipcode","width=700,height=800")
+        window.open("../Team4_API/WebContent/Google Maps/googlemap/0 final/3 finalGoogleMap.html","zipcode","width=700,height=800")
       }
       var openGame = function(){
-        window.open("Team4_API/WebContent/svg/HTML_GAME.html","zipcode","width=1050 ,height=550")
+        window.open("../Team4_API/WebContent/svg/HTML_GAME.html","zipcode","width=1050 ,height=550")
       }
       var openClock = function(){
-        window.open("Team4_API/WebContent/clock.html","zipcode","width=1100 ,height=75")
+        window.open("../Team4_API/WebContent/clock.html","zipcode","width=1100 ,height=75")
       }
       clock.addEventListener('click',openClock);
       earth.addEventListener('click',openGoogleEarth);
