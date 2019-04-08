@@ -1,107 +1,54 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SKILL</title>
-    <link href="css/snow.css" rel="stylesheet">
+    <title>Skill</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <link href="css/sakura.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sakura.css">
     <link href="css/common.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Baloo+Chettan|Bitter|Dancing+Script|Dokdo|Fira+Sans|Heebo|Josefin+Sans|Kanit|Lato|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Nanum+Myeongjo|Noto+Sans+KR|Noto+Serif|Noto+Serif+TC|Nunito|Open+Sans|Oswald|PT+Sans|PT+Sans+Narrow|PT+Serif|Poppins|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Rubik|Signika|Slabo+27px|Source+Sans+Pro|Ubuntu" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon|Noto+Sans+KR" rel="stylesheet">
+    <script>
+        $(window).load(function () {
+            $('body').sakura();
+        });
+    </script>
 </head>
 <body>
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-        <div class="snowflake">★</div>
-      </div>
-    <img src="img/bg_main.jpg" alt="" class="bg">
+    <!--첫번째 행 bg-->
+    <div class="row-fluid">
+        <div class="span12">
+            <img src="../img/bg_love3.jpg" alt="" class="bg">
+        </div>
+    </div>
+    
+    <!--두번째 행 내용-->
     <div class="container">
-        <!--첫번째 ROW-->    
         <div class="row">
-              <div class="col">
-                    <h1>정(情)이 있는 개발자 
-                        <small><i>by MSTER JUNG</i></small>
-                    </h1>
-                    
-              </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark" id="bg_main">              
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                              <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                  <a class="nav-link" href="index.html">About me<span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="experiance.html">Experiance</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="skill.html">Skill</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
-                                </li>
-                              </ul>
-                            </div>
-                    </nav>
-            </div>
-        </div>
-        <div class="textco">
-        <div class="container-fluid row" id="skill_row">
-            <div class="col" id="skill">
-                <h2 class="skill_main"><i>Major Skills</i></h2>
-                <div class="media">
-                  <img src="img/java.png" class="mr-3" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">Java</h5>
-                    
-                      객체 지향 프로그래밍 언어로서 보안성이 뛰어나며 컴파일한 코드는 다른 운영 체제에서 사용할 수 있도록 클래스(class)로 제공된다. 객체 지향 언어인 C++ 언어의 객체 지향적인 장점을 살리면서 분산 환경을 지원하며 더욱 효율적이다.
-                      <br>[네이버 지식백과] 자바 [Java] (컴퓨터인터넷IT용어대사전, 2011. 1. 20., 전산용어사전편찬위원회)
-                  </div>
-                </div>
-                <br>
-                <div class="media">
-                    <img src="img/python.png" class="mr-3" alt="">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Python</h5>
-                      문법 구조가 간단, 명확하고, 많은 시스템 호출과 풍부한 라이브러리(모듈), 다양한 윈도우 시스템용 인터페이스 등을 포함하고 있어 생산성이 높은 강력한 언어이기도 하다. 반면 실행 속도가 상대적으로 느리다는 단점이 있다. 다른 프로그래밍 언어와의 호환성이 높아, 빠른 속도가 필요한 부분은 C, C++ 등의 언어로 개발하여 융합할 수 있다.
-                      <br>[네이버 지식백과] 파이선 [Python] (IT용어사전, 한국정보통신기술협회)
+            <div class="span12">
+            
+                <h1>정(JUNG)이 있는 개발자 <small><i>by MSTER JUNG</i></small></h1>
+            
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                             <a class="brand" href="index.html">Home</a>
+                            <ul class="nav">
+                                <li><a href="index.html">About Me</a></li>
+                                <li><a href="Experiance.html">Experiance</a></li>
+                                <li class="active"><a href="skill.html">Skill</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
-                             <br>
-                <div class="media">
-                    <img src="img/db.png" class="mr-3" alt="">
-                    <div class="media-body">
-                      <h5 class="mt-0">Database</h5>
-                      정보를 일원화(一元化)하여 처리를 효율적으로 수행하기 위해서 서로 관련성을 가지며 중복이 없는 데이터의 집합을 유지하는 것을 데이터베이스(－, database)라고 한다. 그리고 데이터베이스를 관리하는 시스템을 데이터베이스 관리시스템(DBMS: Database Management System)이라 한다.
-                      <br>[네이버 지식백과] 데이터베이스 [Database] (학문명백과 : 공학, 김태달)
-
-
-                    </div>
-                  </div>
-                  <br>
-                  <div class="media">
-                      <img src="img/js.png" class="mr-3" alt="">
-                      <div class="media-body">
-                        <h5 class="mt-0 mb-1">JavaScript</h5>
-                        HTML 문서의 정적이고 단조로운 한계를 극복하기 위해 넷스케이프(Netscape)사가 만든 livescript가 그 이름을 달리 한 것으로서 브라우저 자체에 내장된 해석기능을 이용한 클라이언트(client) 기반의 일종의 스크립트 언어이다. 작고도 빠르기 때문에 웹문서를 동적으로 꾸밀 때 가장 널리 쓰인다.
-                          <br>[네이버 지식백과] 자바스크립트 [JAVA script] (NEW 경제용어사전, 2006. 4. 7., 미래와경영연구소)
-                      </div>
-                     
-                    </div>
-
-                    <br>
-                    <div class="media">
+                <div class="row">
+                    <div class="span12">
+ <div class="media">
                         <img src="img/html.png" class="mr-3" alt="">
                         <div class="media-body">
                           <h5 class="mt-0">HTML5</h5>
@@ -109,44 +56,71 @@
 <br>[네이버 지식백과] HTML5 (매일경제, 매경닷컴)
                         </div>
                       </div>
-                      <br>
-                      <div class="media">
-                          <img src="img/css.png" class="mr-3" alt="">
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1">CSS</h5>
-                            기존의 HTML은 웹 문서를 다양하게 설계하고 수시로 변경하는데 많은 제약이 따르는데, 이를 보완하기 위해 만들어진 것이 스타일 시트이고 스타일 시트의 표준안이 바로 CSS이다. 간단히 스타일 시트라고도 한다.
-<br>[네이버 지식백과] CSS [cascading style sheets] (두산백과)
 
-
-                          </div>
-                         
+                <div class="row">
+                    <div class="span12">
+ <div class="media">
+                        <img src="img/html.png" class="mr-3" alt="">
+                        <div class="media-body">
+                          <h5 class="mt-0">JAVA</h5>
+                      객체 지향 프로그래밍 언어로서 보안성이 뛰어나며 컴파일한 코드는 다른 운영 체제에서 사용할 수 있도록 클래스(class)로 제공된다. 객체 지향 언어인 C++ 언어의 객체 지향적인 장점을 살리면서 분산 환경을 지원하며 더욱 효율적이다.
+                      <br>[네이버 지식백과] 자바 [Java] (컴퓨터인터넷IT용어대사전, 2011. 1. 20., 전산용어사전편찬위원회)
                         </div>
-                        <br>
-                        <div class="media">
-                            <img src="img/git.png" class="mr-3" alt="">
-                            <div class="media-body">
-                              <h5 class="mt-0">Git</h5>
-                              깃(Git /ɡɪt)은 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다. 소프트웨어 개발에서 소스 코드 관리에 주로 사용되지만 어떠한 집합의 파일의 변경사항을 지속적으로 추적하기 위해 사용될 수 있다. 기하학적 불변 이론을 바탕으로 설계됐고, 분산 버전 관리 시스템으로서 빠른 수행 속도에 중점을 두고 있는 것이 특징이며 데이터 무결성, 분산, 비선형 워크플로를 지원한다
-                             <br> [위키백과]
-                            </div>
-                          </div>
-                          <br>
-                          <div class="media">
-                              <img src="img/docker.png" class="mr-3" alt="">
-                              <div class="media-body">
-                                <h5 class="mt-0 mb-1">Docker</h5>
-                                리눅스 재단이 발표한 ‘2014 가장 인기 있는 클라우드 오픈 소스’에서 2위를 차지한 도커는 리눅스 컨테이너 기술을 자동화해 쉽게 사용할 수 있게 하는 오픈소스 프로젝트다.
-                                <br>[네이버 지식백과] 도커 [Docker] (ICT 시사상식 2015, 2014.12.31)
-                              </div>
-                            </div>
-                            <br><br>
+                      </div>
+
+                <div class="row">
+                    <div class="span12">
+ <div class="media">
+                        <img src="img/html.png" class="mr-3" alt="">
+                        <div class="media-body">
+                          <h5 class="mt-0">PYTHON</h5>
+                      문법 구조가 간단, 명확하고, 많은 시스템 호출과 풍부한 라이브러리(모듈), 다양한 윈도우 시스템용 인터페이스 등을 포함하고 있어 생산성이 높은 강력한 언어이기도 하다. 반면 실행 속도가 상대적으로 느리다는 단점이 있다. 다른 프로그래밍 언어와의 호환성이 높아, 빠른 속도가 필요한 부분은 C, C++ 등의 언어로 개발하여 융합할 수 있다.
+                      <br>[네이버 지식백과] 파이선 [Python] (IT용어사전, 한국정보통신기술협회)
+                        </div>
+                      </div>
+
+                <div class="row">
+                    <div class="span12">
+ <div class="media">
+                        <img src="img/html.png" class="mr-3" alt="">
+                        <div class="media-body">
+                          <h5 class="mt-0">DATABASE</h5>
+                      정보를 일원화(一元化)하여 처리를 효율적으로 수행하기 위해서 서로 관련성을 가지며 중복이 없는 데이터의 집합을 유지하는 것을 데이터베이스(－, database)라고 한다. 그리고 데이터베이스를 관리하는 시스템을 데이터베이스 관리시스템(DBMS: Database Management System)이라 한다.
+                      <br>[네이버 지식백과] 데이터베이스 [Database] (학문명백과 : 공학, 김태달)
+                        </div>
+                      </div>
+
+                <div class="row">
+                    <div class="span12">
+ <div class="media">
+                        <img src="img/html.png" class="mr-3" alt="">
+                        <div class="media-body">
+                          <h5 class="mt-0">JAVASCRIPT</h5>
+                        HTML 문서의 정적이고 단조로운 한계를 극복하기 위해 넷스케이프(Netscape)사가 만든 livescript가 그 이름을 달리 한 것으로서 브라우저 자체에 내장된 해석기능을 이용한 클라이언트(client) 기반의 일종의 스크립트 언어이다. 작고도 빠르기 때문에 웹문서를 동적으로 꾸밀 때 가장 널리 쓰인다.
+                          <br>[네이버 지식백과] 자바스크립트 [JAVA script] (NEW 경제용어사전, 2006. 4. 7., 미래와경영연구소)
+                        </div>
+                      </div>
+
+                    </div>
+                    <!--<div class="span8">Level 3</div>-->
+                </div>
+                <div class="row">
+                <div class="span12">
+                    <div class="navbar navbar-bottom">
+                     <div class="well-large">
+                     <p class="text-center">
+                            <b>Copyright ⓒ MasterJung Corp. All Rights Reserved.
+                            </b></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
-      </div>
-  
+    </div>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sakura.js"></script>
 </body>
 </html>
