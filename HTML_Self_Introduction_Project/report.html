@@ -1,0 +1,251 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/introduce.css" rel="stylesheet">
+    <title>BITCAMP4 SEARCH</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+
+      div {
+        margin: 10px;
+        padding: 20px;
+        border: 10px solid #dddddd;
+        width: 90%;
+        
+      }
+      .header{
+          text-align : center;
+          border:none;
+          font-weight : bold;
+          color:white;
+          
+      }
+      .header, .content {
+        box-sizing: content-box;
+        
+      }
+      .nav{
+        background-color:#dddddd;
+        padding:5px 20px 5px 20px;
+        
+      }
+      p{
+          margin : 0px;
+      }
+      h3{
+          margin : 0px 10px 10px 10px;
+      }
+      .menu{
+          
+          overflow: hidden;
+          margin : 5px;
+          border : none;
+          display:initial;
+          text-align : center;
+          font-weight: bold;
+          padding :0px 50px 0px 50px;
+      }
+      .content {
+        text-align: center;
+        border:none;
+      }
+    a:link{
+        color:black;
+        text-decoration: none;
+    }
+    a:visited{
+        color:black;
+        text-decoration: none;
+    }
+    a:hover{
+        color:gray;
+        text-decoration: none;
+      }
+    .searchBox {
+    font: bold 16px 맑은 고딕,dotum,arial,sans-serif;
+    width :40%;
+    line-height: 34px;
+    height: 50px !important;
+    padding : 15px 15px 15px 15px ;
+    border-color :black;
+    border-radius: 10px 10px 10px 10px;
+    border-style : solid;
+    outline : none; 
+    
+    
+  }
+  #searchBtn{
+    font: bold 10px 맑은 고딕,dotum,arial,sans-serif;
+
+    height: 50px !important;
+    border-style:solid;
+    margin:0px !important;
+    padding : 0px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
+  }
+  #picture_board{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
+  }
+  #earth{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
+  }
+  #game{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
+  }
+  #clock{
+    border-style:solid;
+    margin:0px !important;
+    padding : 1px 40px 0px 5px ;
+    line-height: 34px;
+    outline : none;
+    border:none;
+  }
+  input::placeholder { 
+    color: #dddddd;
+    
+    font-size: 1.0em;
+    text-align : left;
+  }
+  
+    </style>
+  </head>
+  <body>
+    <br><br><br><br><br><br><br><br>
+    <div class="header">
+        <a href="./report.html"><p><h1>BIT CAMP <h2>Team4</h2></h1></p></a>
+    </div>
+    
+    <div class="content">
+      <br>
+      <input id="textBox" class="searchBox" type="text" value="" 
+             placeholder=" Member Name" 
+             onmouseover="changeColor(this)" 
+             onmouseout="changeColor2(this)"> 
+            
+      <br><br>
+      <input id="searchBtn" type = "image" src = "images/magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
+      <input id="game" type = "image" src = "images/gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      
+      <input id="picture_board" type = "image" src = "images/draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="clock" type = "image" src = "images/clock.png" alt="Submit"  value="시계" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+
+      <input id="earth" type = "image" src = "images/earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
+      
+       
+    </div>
+    
+    <script>
+      var team4 = ['김동현', '복다빈','장지훈', '권예지', '정규현', '신선하','4조 부트스트랩','SVG'];
+      var searchBtn = document.querySelector('#searchBtn');
+      var textBox = document.querySelector('#textBox');
+      var picture_board = document.querySelector('#picture_board');
+      var game = document.querySelector('#game');
+      function changeColorIcon(obj){
+        if(obj.id=="searchBtn"){
+          obj.src="images/magnifier-gray.png"
+        }else if(obj.id=="images/picture_board"){
+          obj.src="images/draw-a-picture-gray.png"
+        }else if(obj.id=="earth"){
+          obj.src="images/earth-gray.png"
+        }else if(obj.id=="game"){
+          obj.src="images/gamepad-gray.png"
+        }else if(obj.id=="clock"){
+          obj.src="images/clock-gray.png"
+        }
+      }
+      function changeColorIcon2(obj){
+        if(obj.id=="searchBtn"){
+          obj.src="images/magnifier.png"
+        }else if(obj.id=="picture_board"){
+          obj.src="images/draw-a-picture.png"
+        }else if(obj.id=="earth"){
+          obj.src="images/earth.png"
+        }else if(obj.id=="game"){
+          obj.src="images/gamepad.png"
+        }else if(obj.id=="clock"){
+          obj.src="images/clock.png"
+        }
+      }
+      function changeColor(obj){
+        obj.style.backgroundColor = "#f3f3f3";  
+        obj.style.bordercolor = "";        
+      }
+      function changeColor2(obj){
+        obj.style.backgroundColor = "white";
+      }
+      var findTeam = function (){
+        if (team4.indexOf(textBox.value) == 0) {
+          window.open('DongHyeon/Portfolio/Portfolio.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 1){
+          window.open('report.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 2){
+          window.open('jihoon/self bootstrap/introduce1.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 3){
+          window.open('yeji/1홈페이지_손코딩/home.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 4){
+          window.open('kyuhyun/bootstrap/old/index.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 5){
+          window.open('SUN HA/hand coding/index.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 6){
+          window.open('yeji/2Bootstrap_main/2번시안/0-1index.html');
+          textBox.value = '';
+        }else if(team4.indexOf(textBox.value) == 7){
+          window.open('HTML_svg_game/HTML_SVG.html');
+          textBox.value = '';
+        }else{
+          alert('4조원의 이름이 아닙니다.');
+          textBox.value = '';
+        }
+      }
+      var openPictureBoard = function(){
+        window.open("jihoon/self bootstrap/paint2.html" ,"zipcode","width=550 , height=629");
+      }
+      var openGoogleEarth = function(){
+        window.open("3. HTML Google Maps/googlemap/0 final/3 finalGoogleMap.html","zipcode","width=700,height=800")
+      }
+      var openGame = function(){
+        window.open("HTML_svg_game/HTML_GAME.html","zipcode","width=1050 ,height=550")
+      }
+      var openClock = function(){
+        window.open("kyuhyun/Clock/clock.html","zipcode","width=1100 ,height=75")
+      }
+      clock.addEventListener('click',openClock);
+      earth.addEventListener('click',openGoogleEarth);
+      picture_board.addEventListener('click',openPictureBoard);
+      searchBtn.addEventListener('click', findTeam);
+      game.addEventListener('click',openGame)
+      textBox.addEventListener('keyup', function(e) {
+        if (e.keyCode === 13) {
+          findTeam();
+        }
+      })
+      
+
+    </script>
+  </body>
+</html>
