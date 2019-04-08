@@ -142,13 +142,13 @@
              onmouseout="changeColor2(this)"> 
             
       <br><br>
-      <input id="searchBtn" type = "image" src = "../images/magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
-      <input id="game" type = "image" src = "../images/gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="searchBtn" type = "image" src = "images/magnifier.png" alt="Submit"  value="검색" width="42.5" height="20" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)"> 
+      <input id="game" type = "image" src = "images/gamepad.png" alt="Submit"  value="게임" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
       
-      <input id="picture_board" type = "image" src = "../images/draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
-      <input id="clock" type = "image" src = "../images/clock.png" alt="Submit"  value="시계" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="picture_board" type = "image" src = "images/draw-a-picture.png" alt="Submit"  value="그림판" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
+      <input id="clock" type = "image" src = "images/clock.png" alt="Submit"  value="시계" width="42.5" height="44" onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)">
 
-      <input id="earth" type = "image" src = "../images/earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
+      <input id="earth" type = "image" src = "images/earth.png" alt="Submit"  value="구글맵" width="42.5" height="44"onmouseover="changeColorIcon(this)"onmouseout="changeColorIcon2(this)" >
       
        
     </div>
@@ -161,28 +161,28 @@
       var game = document.querySelector('#game');
       function changeColorIcon(obj){
         if(obj.id=="searchBtn"){
-          obj.src="../images/magnifier-gray.png"
+          obj.src="images/magnifier-gray.png"
         }else if(obj.id=="images/picture_board"){
-          obj.src="../images/draw-a-picture-gray.png"
+          obj.src="images/draw-a-picture-gray.png"
         }else if(obj.id=="earth"){
-          obj.src="../images/earth-gray.png"
+          obj.src="images/earth-gray.png"
         }else if(obj.id=="game"){
-          obj.src="../images/gamepad-gray.png"
+          obj.src="images/gamepad-gray.png"
         }else if(obj.id=="clock"){
-          obj.src="../images/clock-gray.png"
+          obj.src="images/clock-gray.png"
         }
       }
       function changeColorIcon2(obj){
         if(obj.id=="searchBtn"){
-          obj.src="../images/magnifier.png"
+          obj.src="images/magnifier.png"
         }else if(obj.id=="picture_board"){
-          obj.src="../images/draw-a-picture.png"
+          obj.src="images/draw-a-picture.png"
         }else if(obj.id=="earth"){
-          obj.src="../images/earth.png"
+          obj.src="images/earth.png"
         }else if(obj.id=="game"){
-          obj.src="../images/gamepad.png"
+          obj.src="images/gamepad.png"
         }else if(obj.id=="clock"){
-          obj.src="../images/clock.png"
+          obj.src="images/clock.png"
         }
       }
       function changeColor(obj){
