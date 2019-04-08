@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+    // <![CDATA[
+    var colours = new Array('#81F79F', '#58FAD0', '#3ADF00', '#FE2E2E', '#FA8258', '#FF00FF');
+    var minisize = 15; // smallest size of hearts in pixels
+    var maxisize = 20; // biggest size of hearts in pixels
+    var hearts = 50; // maximum number of hearts on screen
+    var over_or_under = "over";
+    var x = ox = 400;
+    var y = oy = 300;
+    var swide = 800;
+    var shigh = 600;
+    var sleft = sdown = 0;
+    var herz = new Array();
+    var herzx = new Array();
+    var herzy = new Array();
+    var herzs = new Array();
+    var kiss = false;
+
+    if (typeof ('addRVLoadEvent') != 'function')
+
+    function addRVLoadEvent(funky) {
+      var oldonload = window.onload;
+      if (typeof (oldonload) != 'function') window.onload = funky;
+      else window.onload = function () {
+        if (oldonload) oldonload();
+        funky();
+      }
+    }
+
+    addRVLoadEvent(mwah);
+
+    function mwah() {
+      if (document.getElementById) {
+        var i, heart;
+        for (i = 0; i < hearts; i++) {
+          heart = createDiv("auto", "auto");
+          heart.style.visibility = "hidden";
+          heart.style.zIndex = (over_or_under == "over") ? "1001" : "0";
+          heart.style.color = colours[i % colours.length];
+          heart.style.pointerEvents = "none";
+          if (navigator.appName == "Microsoft Internet Explorer") heart.style.filter = "alpha(opacity=75)";
+          else heart.style.opacity = 0.75;
+          heart.appendChild(document.createTextNode(String.fromCharCode(9829)));
+          document.body.appendChild(heart);
+          herz[i] = heart;
+          herzy[i] = false;
+        }
+        set_scroll();
+        set_width();
+        herzle();
+      }
+    }
+
+    function herzle() {
+      var c;
+      if (Math.abs(x - ox) > 1 || Math.abs(y - oy) > 1) {
+        ox = x;
+        oy = y;
+        for (c = 0; c < hearts; c++)
+          if (herzy[c] === false) {
+            herz[c].firstChild.nodeValue = String.fromCharCode(9829);
+            herz[c].style.left = (herzx[c] = x - minisize / 2) + "px";
+            herz[c].style.top = (herzy[c] = y - minisize) + "px";
+            herz[c].style.fontSize = minisize + "px";
+            herz[c].style.fontWeight = 'normal';
+            herz[c].style.visibility = 'visible';
+            herzs[c] = minisize;
+            break;
+          }
+      }
+      for (c = 0; c < hearts; c++)
+        if (herzy[c] !== false) blow_me_a_kiss(c);
+      setTimeout("herzle()", 40);
+    }
+
+    document.onmousedown = pucker;
+    document.onmouseup = function () {
+      clearTimeout(kiss);
+    };
+
+    function pucker() {
+      ox = -1;
+      oy = -1;
+      kiss = setTimeout('pucker()', 100);
+    }
+
+    function blow_me_a_kiss(i) {
+      herzy[i] -= herzs[i] / minisize + i % 2;
+      herzx[i] += (i % 5 - 2) / 5;
+      if (herzy[i] < sdown - herzs[i] || herzx[i] < sleft - herzs[i] || herzx[i] > sleft + swide - herzs[i]) {
+        herz[i].style.visibility = "hidden";
+        herzy[i] = false;
+      } else if (herzs[i] > minisize + 2 && Math.random() < .5 / hearts) break_my_heart(i);
+      else {
+        if (Math.random() < maxisize / herzy[i] && herzs[i] < maxisize) herz[i].style.fontSize = (++herzs[i]) + "px";
+        herz[i].style.top = herzy[i] + "px";
+        herz[i].style.left = herzx[i] + "px";
+      }
+    }
+
+    function break_my_heart(i) {
+      var t;
+      herz[i].firstChild.nodeValue = String.fromCharCode(9676);
+      herz[i].style.fontWeight = 'bold';
+      herzy[i] = false;
+      for (t = herzs[i]; t <= maxisize; t++) setTimeout('herz[' + i + '].style.fontSize="' + t + 'px"', 60 * (t - herzs[
+        i]));
+      setTimeout('herz[' + i + '].style.visibility="hidden";', 60 * (t - herzs[i]));
+    }
+
+    document.onmousemove = mouse;
+
+    function mouse(e) {
+      if (e) {
+        y = e.pageY;
+        x = e.pageX;
+      } else {
+        set_scroll();
+        y = event.y + sdown;
+        x = event.x + sleft;
+      }
+    }
+
+    window.onresize = set_width;
+
+    function set_width() {
+      var sw_min = 999999;
+      var sh_min = 999999;
+      if (document.documentElement && document.documentElement.clientWidth) {
+        if (document.documentElement.clientWidth > 0) sw_min = document.documentElement.clientWidth;
+        if (document.documentElement.clientHeight > 0) sh_min = document.documentElement.clientHeight;
+      }
+      if (typeof (self.innerWidth) == 'number' && self.innerWidth) {
+        if (self.innerWidth > 0 && self.innerWidth < sw_min) sw_min = self.innerWidth;
+        if (self.innerHeight > 0 && self.innerHeight < sh_min) sh_min = self.innerHeight;
+      }
+      if (document.body.clientWidth) {
+        if (document.body.clientWidth > 0 && document.body.clientWidth < sw_min) sw_min = document.body.clientWidth;
+        if (document.body.clientHeight > 0 && document.body.clientHeight < sh_min) sh_min = document.body.clientHeight;
+      }
+      if (sw_min == 999999 || sh_min == 999999) {
+        sw_min = 800;
+        sh_min = 600;
+      }
+      swide = sw_min;
+      shigh = sh_min;
+    }
+
+    window.onscroll = set_scroll;
+
+    function set_scroll() {
+      if (typeof (self.pageYOffset) == 'number') {
+        sdown = self.pageYOffset;
+        sleft = self.pageXOffset;
+      } else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+        sdown = document.body.scrollTop;
+        sleft = document.body.scrollLeft;
+      } else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement
+          .scrollLeft)) {
+        sleft = document.documentElement.scrollLeft;
+        sdown = document.documentElement.scrollTop;
+      } else {
+        sdown = 0;
+        sleft = 0;
+      }
+    }
+
+    function createDiv(height, width) {
+      var div = document.createElement("div");
+      div.style.position = "absolute";
+      div.style.height = height;
+      div.style.width = width;
+      div.style.overflow = "hidden";
+      div.style.backgroundColor = "transparent";
+      return (div);
+    }
+  </script>
+
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: yellowgreen;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .topnav {
+      overflow: hidden;
+      background-color: black;
+    }
+
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+
+    .content {
+      text-align: center;
+      font-style: "맑은고딕";
+      letter-spacing: 5px;
+      margin-top: 30px;
+      margin-left: 13%;
+      margin-right: 13%;
+      margin-bottom: 50px;
+      background-color: whitesmoke;
+      padding: 20px;
+      height: 250px;
+    }
+
+    .content2 {
+      padding: 20px;
+      text-align: center;
+      font-style: "맑은고딕";
+      letter-spacing: 5px;
+      margin-top: 30px;
+      margin-left: 13%;
+      margin-right: 13%;
+      margin-bottom: 50px;
+      background-color: whitesmoke;
+      padding-left: 27px;
+      padding-right: 27px;
+      height: 450px;
+    }
+
+    .content3 {
+      padding: 20px;
+      text-align: center;
+      font-style: "맑은고딕";
+      letter-spacing: 5px;
+      margin-top: 30px;
+      margin-left: 13%;
+      margin-right: 13%;
+      margin-bottom: 50px;
+      background-color: whitesmoke;
+      padding-left: 27px;
+      padding-right: 27px;
+      height: 600px;
+    }
+
+
+    .footer {
+
+      color: white;
+      line-height: 35px;
+      font-size: 12px;
+      height: 35px;
+      background-color: black;
+      text-align: center;
+    }
+
+    /* 사진*/
+    div.gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+    }
+
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a href="#">PORTFOLIO</a>
+
+  </div>
+
+  <div class="content">
+    <h2>&nbsp;&nbsp;BITCAMP TEAM 4</h2>
+    <p><b>&nbsp;&nbsp;&nbsp;이름 : 김동현</b></p>
+    <p><b>&nbsp;&nbsp;&nbsp;나이 : 25</b></p>
+    <p><b>&nbsp;&nbsp;&nbsp;지역 : 안산</b></p>
+  </div>
+
+  <div class="content2">
+      <h2>&nbsp;&nbsp;Favorite Food</h2>
+    <div class="gallery">
+      
+      <a target="_blank" href="images/2.jpg">
+        <img src="images/2.jpg" alt="Cinque Terre" {width="500" !important;} height="250">
+      </a>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="images/3.jpg">
+        <img src="images/3.jpg" alt="Forest" {width="500" !important;} height="250">
+      </a>
+      <div class="desc"></div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="images/4.jpg">
+        <img src="images/4.jpg" alt="Northern Lights" {width="500" !important;} height="250">
+      </a>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="images/5.jpg">
+        <img src="images/5.jpg" alt="Mountains" {width="500" !important;} height="100">
+      </a>
+    </div>
+  </div>
+
+  <div class="content3">
+    <h2>&nbsp;&nbsp;Location</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25326.51049018325!2d126.9993459117683!3d37.48871985404036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca16abf1bd3b3%3A0xa4dcd8abd096a6e6!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjrj5k!5e0!3m2!1sko!2skr!4v1554405890002!5m2!1sko!2skr"
+      width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+  </div>
+
+  <div class="footer">
+    <p>BITCAMP 4</p>
+  </div>
+
+</body>
+
+</html>

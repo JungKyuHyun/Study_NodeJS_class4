@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>예지의 홈페이지</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCwyWKS3bpd9QE5QOuwwdU_toLxTvARQ&callback=initMap"></script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="sakura.css">
+    
+    <script>
+      function initialize() {
+       var myLatlng = new google.maps.LatLng(37.3765767,126.7274797);
+       var mapOptions = {
+            zoom: 17,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+       }
+       var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+       var marker = new google.maps.Marker({
+             position: myLatlng,
+             map: map,
+             title: "시흥시"
+      });
+      }
+
+     </script>
+     <!-- 지도 -->
+		<script>
+			$(window).load(function () {
+				$('body').sakura();
+			});
+		</script>
+		    <style>
+				.mySlides {display:none;}
+				body {
+					background-color: rgb(253, 218, 253);
+					
+					}       
+				header {
+				   font-family:'돋움체';
+				   background-color: rgb(175, 108, 206);
+				   padding: 30px;
+				   text-align: center;
+				   font-size: 35px;
+				   color: white;
+				   border-style : double;
+				   margin-left: 15%;
+				  margin-right: 15%;
+						}
+		
+				ul {
+				  font-family:'돋움체';
+				  list-style-type: none;
+				  margin: 0;
+				  padding: 0;
+				  overflow: hidden;
+				  background-color: rgb(243, 154, 188);
+				  margin-left: 15%;
+				  margin-right: 15%;
+				}
+				
+				li {
+				  float: left;
+				}
+				
+				li a {
+				  display: block;
+				  color: white;
+				  text-align: center;
+				  padding: 16px;
+				  text-decoration: none;
+				}
+				
+				li a:hover {
+				  background-color: rgb(180, 179, 179);
+				}
+				.cities {
+				  background-color: rgb(255, 255, 255);
+				  color: rgb(0, 0, 0);
+				  margin-left: 15%;
+				  margin-right: 15%;
+				  
+				}
+	
+				p {
+					font-family:'돋움체';
+				}
+	
+				h2 {
+					font-family:'돋움체';
+				}
+	
+				img {
+					max-width: 100%;
+					align:center;
+          border-radius: 80px;
+
+					}
+	
+	
+		
+		
+				</style>
+	</head>
+	<body onload="initialize()">
+			<script type="text/JavaScript"> 
+				<!-- 
+				function MM_openBrWindow(theURL,winName,features) { //v2.0 
+				  window.open(theURL,winName,features); 
+				} 
+				//--> 
+				</script> 
+ 
+        <header>
+                <h1><br>Yeji's House<br><br></h1>
+		</header>
+		<br>
+        <ul>
+					<li><a href="../Yejiindex.html"><b>Intro</b></a></li>
+					<li><a href="P.html"><b>Personality</b></a></li>
+					<li><a href="H.html"><b>Hobby</b></a></li>
+              </ul>
+              
+              <div class="cities">
+
+                    </div> 
+
+		 <div class="cities">
+						<p> <h3>&nbsp; Where are you?</h3>	
+              
+                <div id="map_canvas"style="width:500px; height:300px;"></div>
+                <br>
+						</p>      
+      </div>   
+      
+      <div class="cities">
+        <p> <h3>&nbsp; favorite artist</h3>	
+            <img src="../images/아이유.jpg" width="320" height="320">
+            <img src="../images/식케이.jpg" width="320" height="320">
+            <img src="../images/마이클잭슨.jpg" width="320" height="320">
+
+            <br><br><br>
+        </p>      
+  </div>   
+
+
+  </div>   
+
+
+
+
+		<script src="js/akura.js"></script>
+	</body>
+</html>
