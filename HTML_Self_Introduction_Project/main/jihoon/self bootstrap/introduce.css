@@ -17,6 +17,56 @@
  height : 1150px;    
  float : right     
  }
+ #content2{
+    /* background-color : #bebebe; */
+    background-image: url("images/2.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+   
+    width :80%;
+    height : 1150px;    
+    float : right     
+    }
+#content3{
+        /* background-color : #bebebe; */
+        background-image: url("images/3.png");
+        background-repeat:no-repeat;
+        background-size:cover;
+       
+        width :80%;
+        height : 1150px;    
+        float : right     
+        }    
+#content4{
+            /* background-color : #bebebe; */
+            background-image: url("images/4.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+           
+            width :80%;
+            height : 1150px;    
+            float : right     
+            }
+#content5{
+                /* background-color : #bebebe; */
+                background-image: url("images/5.png");
+                background-repeat:no-repeat;
+                background-size:cover;
+               
+                width :80%;
+                height : 1150px;    
+                float : right     
+                }  
+#content6{
+                    /* background-color : #bebebe; */
+                    background-image: url("images/6.png");
+                    background-repeat:no-repeat;
+                    background-size:cover;
+                   
+                    width :80%;
+                    height : 1150px;    
+                    float : right     
+                    } 
 #innercontent{
 
 width : 50%;
@@ -81,3 +131,4 @@ background-color: #bebebe
 width : 30px;
 height : 40px;
 }
+
